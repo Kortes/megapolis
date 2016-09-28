@@ -1,0 +1,60 @@
+@import "var";
+
+.contact{
+	border: 1px solid @c-link;
+	border-radius: 4px;
+	margin-bottom: 25px;
+	overflow: hidden;
+
+	&__top{
+		padding: 20px 25px;
+		font-size: 15px;
+		font-weight: 600;
+	}
+
+	&__phone{
+		font-weight: 200;
+		font-size: 30px;
+	}
+
+	&__bottom{
+		background: lighten(@c-bg, 10%);
+		padding: 25px 0;
+		display: flex;
+	}
+
+	&__cell{
+		width: 185px;
+		box-sizing: border-box;
+		padding: 0 25px;
+		border-left: 1px solid @c-white;
+
+		&:first-child{
+			width: 245px;
+			border-left: none;
+		}
+
+		&:last-child{
+			width: 310px;
+		}
+	}
+
+	&__title{
+		font-weight: 600;
+		font-size: 15px;
+		margin-bottom: 10px;
+	}
+
+	&__text{
+		font-size: 16px;
+	}
+
+	&__mail{
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+
+	&__map{
+		height: 550px;
+	}
+}

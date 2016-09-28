@@ -1,0 +1,51 @@
+{% set stockItem = {
+	"image": "./images/stock-item.jpg",
+	"text": "<h2>В этом магазине вас ждёт много полезных продуктов</h2><p>Например, рядом с входной группой расположена детская комната с лабиринтом и развивающими игрушками, где малыши могут поиграть под присмотром бэби-ситтеров, пока родители заняты покупками.</p><p>Постоянные покупатели ценят собственное производство магазина, которое на новых площадях развернулись во всю ширь и уже предлогаюи новые вкусные блюда — новые виды салатов, выпечки, горячих блюд. Появился новый снэк-бар с ассортиментом горячей выпечки, бутербродов, свежевыжатых соков и горячих напитков. Открытая пекарня, работающая по новейшим французским и немецким технологиям, радует посетителей ароматом свежеиспеченного хлеба.</p>",
+	"range": "с&nbsp;19&nbsp;июля по&nbsp;5&nbsp;августа 2016&nbsp;года",
+	"shop": {
+		"image": "./images/stock-shop.jpg",
+		"info": [
+			"4 ЭТАЖ", "с 7:00 до 23:00", "Ежедневно"
+		],
+		"phone": "+7 (343) 229-30-50",
+		"site": "www.samsung.ru"
+	},
+	"discount": "50%"
+}%}
+
+<div class="text stock-item">
+	<div class="text__content">
+		<div class="text__content-inner">
+			<div class="text__image">
+				<img src="{{ stockItem.image }}" alt="" />
+			</div>
+			{{ stockItem.text }}
+		</div>
+	</div>
+	<div class="text__aside">
+		<div class="text__aside-inner">
+			<div class="stock-item__info">
+				<div class="stock-item__range">
+					Акция проходит<br>{{ stockItem.range }}
+				</div>
+				<div class="stock-item__discount">
+					<div class="stock-item__percent">-{{ stockItem.discount }}</div>
+				</div>
+			</div>
+			<div class="stock-item__shop">
+				<div class="stock-item__image">
+					<img class="stock-item__img" src="{{ stockItem.shop.image }}" alt="" />
+				</div>
+				<ul class="stock-item__shop-info">
+					{% for item in stockItem.shop.info %}
+						<li>{{ item }}</li>
+					{% endfor %}
+				</ul>
+				<div class="stock-item__contact">
+					<div class="stock-item__phone">{{ stockItem.shop.phone }}</div>
+					<a href="http://{{ stockItem.shop.site }}" class="stock-item__site">{{ stockItem.shop.site }}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

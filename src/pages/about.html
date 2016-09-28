@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% set pageTitle = "О центре" %}
+
+{% set breadcrumbs = [
+	{"link": "/", "title": "Главная"}
+]%}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block top %}
+	<div class="page__title">
+		<div>
+			<h1>{{ pageTitle }}</h1>
+		</div>
+	</div>
+	{% include 'breadcrumbs.html' %}
+{% endblock %}
+
+{% block content %}
+	<div class="text">
+		<div class="text__block">
+			<h2>Современный</h2>
+			<p>Например, рядом с входной группой расположена детская комната с лабиринтом и развивающими игрушками, где малыши могут поиграть под присмотром бэби-ситтеров, пока родители заняты покупками.Постоянные покупатели ценят собственное производство магазина, которое на новых площадях развернулись во всю ширь и уже предлогаюи новые вкусные блюда — новые виды салатов, выпечки, горячих блюд. Появился новый снэк-бар с ассортиментом горячей выпечки, бутербродов, свежевыжатых соков и горячих напитков. Открытая пекарня, работающая по новейшим французским и немецким технологиям, радует посетителей ароматом свежеиспеченного хлеба.</p>
+			<div class="gallery">
+				<ul class="gallery__big">
+					<li class="gallery__big-item gallery__big-item_active">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/f00000" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+					<li class="gallery__big-item">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/ff0000" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+					<li class="gallery__big-item">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/fff000" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+					<li class="gallery__big-item">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/ffff00" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+					<li class="gallery__big-item">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/fffff0" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+					<li class="gallery__big-item">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/00000f" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+				</ul>
+				<ul class="gallery__preview">
+					<li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/f00000" class="gallery__preview-img" alt=""/>
+						</a>
+					</li><li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/ff0000" class="gallery__preview-img" alt=""/>
+						</a>
+					</li><li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/fff000" class="gallery__preview-img" alt=""/>
+						</a>
+					</li><li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/ffff00" class="gallery__preview-img" alt=""/>
+						</a>
+					</li><li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/fffff0" class="gallery__preview-img" alt=""/>
+						</a>
+					</li><li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/00000f" class="gallery__preview-img" alt=""/>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<h3>Доступный</h3>
+			<p>Например, рядом с входной группой расположена детская комната с лабиринтом и развивающими игрушками, где малыши могут поиграть под присмотром бэби-ситтеров, пока родители заняты покупками.Постоянные покупатели ценят собственное производство магазина, которое на новых площадях развернулись во всю ширь и уже предлогаюи новые вкусные блюда — новые виды салатов, выпечки, горячих блюд. Появился новый снэк-бар с ассортиментом горячей выпечки, бутербродов, свежевыжатых соков и горячих напитков. Открытая пекарня, работающая по новейшим французским и немецким технологиям, радует посетителей ароматом свежеиспеченного хлеба.</p>
+			<p class="h3"><a href="#">Координаты ТЦ «МЕГАПОЛИС»</a></p>
+			<a href="#" class="btn">Написать нам письмо</a>
+		</div>
+	</div>
+{% endblock %}

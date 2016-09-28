@@ -1,0 +1,16 @@
+{% set menuLeft = [
+	{"link": "#", "title": "Магазины"},
+	{"link": "#", "title": "Кинотеатры", "active": true},
+	{"link": "#", "title": "Кафе и Рестораны"},
+	{"link": "#", "title": "Развлечения"},
+	{"link": "#", "title": "Акции"},
+	{"link": "#", "title": "Новости"}
+]%}
+
+<ul class="menu-left">
+	{% for item in menuLeft %}
+		<li class="menu-left__item">
+			<a href="{{ item.link }}" class="menu-left__link {% if item.active %}menu-left__link_active{% endif %}">{{ item.title }}</a>
+		</li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% set pageTitle = "Позитивный заряд в подарок Samsung" %}
+
+{% set breadcrumbs = [
+	{"link": "/", "title": "Главная"},
+	{"link": "/stocks.html", "title": "Акции"}
+]%}
+
+{% set stock = {
+	"title": "Вам также могут быть интересны",
+	"type": "border",
+	"more": true,
+	"list":[
+		{"link": "#", "image": "./images/stock1.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 ноября", "discount": "15%", "color": "green"},
+		{"link": "#", "image": "./images/stock2.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 декабря", "discount": "30%", "color": "blue"},
+		{"end": true, "text": "второй <div class='stock__title'>розыгрыш iphone 6s</div> состоялся!"},
+		{"link": "#", "image": "./images/stock4.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 января", "discount": "10%", "color": "orange"}
+	]
+}%}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block top %}
+	<div class="page__title">
+		<h1>{{ pageTitle }}</h1>
+	</div>
+	{% include 'breadcrumbs.html' %}
+{% endblock %}
+
+{% block content %}
+	{% include 'stock-item.html' %}
+	{% include 'stock.html' %}
+{% endblock %}

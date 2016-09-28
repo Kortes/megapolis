@@ -1,0 +1,25 @@
+@import "var";
+
+.header{
+	display: flex;
+	justify-content: space-between;
+	background: darken(@c-dark, 4.5%);
+	align-items: center;
+
+	&__link{
+		display: inline-block;
+		margin-left: 25px;
+		padding: 3px 0 0 35px;
+		line-height: 30px;
+		color: @c-white;
+		text-decoration: underline;
+		font-weight: 600;
+		text-transform: uppercase;
+		font-size: 13px;
+		background: url(../images/map.png) no-repeat left center;
+
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}

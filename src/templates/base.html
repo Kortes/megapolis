@@ -1,0 +1,42 @@
+{% set title = "SEO текст для продвижения" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+      <link rel="stylesheet" href="css/main.css" />
+      <title>{% block title %}{% endblock %} - megapolis</title>
+      <meta charset='utf-8'>
+      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+      <meta name='description' content=''>
+	    <meta name="viewport" content="width=1024">
+    {% endblock %}
+</head>
+<body class="page {% block pageClass %}{% endblock %}">
+    <div class="container page__inner">
+      <div class="page__aside">
+        {% include 'aside.html' %}
+        {% include 'footer.html' %}
+      </div>
+      <div class="page__main">
+        {% block header %}
+          {% include 'header.html' %}
+        {% endblock %}
+        
+        {% block top %}{% endblock %}
+        <div class="page__content">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+    {% block fancybox %}
+      <div class="fancybox">
+        fancybox
+      </div>
+    {% endblock %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="ui/fancybox/fancybox.js"></script>
+    {% block script %}{% endblock %}
+    <script src='js/main.js'></script>
+</body>
+</html>

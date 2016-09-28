@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% set pageTitle = "Карусель" %}
+
+{% set breadcrumbs = [
+	{"link": "/", "title": "Главная"},
+	{"link": "/shops.html", "title": "Магазины"}
+]%}
+
+{% set shopItem = {
+	"image": "./images/shop-item.jpg",
+	"text": "<h2>В этом магазине вас ждёт много полезных продуктов</h2><p>Например, рядом с входной группой расположена детская комната с лабиринтом и развивающими игрушками, где малыши могут поиграть под присмотром бэби-ситтеров, пока родители заняты покупками.</p><p>Постоянные покупатели ценят собственное производство магазина, которое на новых площадях развернулись во всю ширь и уже предлогаюи новые вкусные блюда — новые виды салатов, выпечки, горячих блюд. Появился новый снэк-бар с ассортиментом горячей выпечки, бутербродов, свежевыжатых соков и горячих напитков. Открытая пекарня, работающая по новейшим французским и немецким технологиям, радует посетителей ароматом свежеиспеченного хлеба.</p><img src='./images/card.png' class='text_right' alt='' /><h3>Волшебная карта</h3><p>Например, рядом с входной группой расположена детская комната с лабиринтом и развивающими игрушками, где малыши могут поиграть под присмотром бэби-ситтеров, пока родители заняты покупками.</p><p>Например, рядом с входной группой расположена детская</p>",
+	"shop": {
+		"image": "./images/brand.jpg",
+		"info": [
+			"1 ЭТАЖ", "с 7:00 до 23:00", "Ежедневно"
+		],
+		"phone": "+7 (343) 229-30-50",
+		"site": "www.samsung.ru"
+	}
+}%}
+
+{% set stock = {
+	"title": "Вам также могут быть интересны",
+	"type": "border",
+	"more": true,
+	"list":[
+		{"link": "#", "image": "./images/stock1.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 ноября", "discount": "15%", "color": "green"},
+		{"link": "#", "image": "./images/stock2.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 декабря", "discount": "30%", "color": "blue"},
+		{"end": true, "text": "второй <div class='stock__title'>розыгрыш iphone 6s</div> состоялся!"},
+		{"link": "#", "image": "./images/stock4.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 января", "discount": "10%", "color": "orange"}
+	]
+}%}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block top %}
+	<div class="page__title filter">
+		<div>
+			<h1>{{ pageTitle }}</h1>
+		</div>
+		<div class="filter__list">
+			<a href="#" class="filter__item filter__item_search">Поиск</a>
+			<a href="#" class="filter__item filter__item_category">Торговая категория</a>
+		</div>
+		<div class="filter__slide">
+			{% include 'search.html' %}
+		</div>
+		<div class="filter__slide">
+			{% include 'filter.html' %}
+		</div>
+	</div>
+	{% include 'breadcrumbs.html' %}
+{% endblock %}
+
+{% block content %}
+	<div class="text">
+		<div class="text__content">
+			<div class="text__content-inner">
+				<div class="text__image">
+					<img src="{{ shopItem.image }}" alt="" />
+				</div>
+			</div>
+		</div>
+		<div class="text__aside">
+			<div class="text__aside-inner">
+				<div class="stock-item__shop">
+					<div class="stock-item__image">
+						<img class="stock-item__img" src="{{ shopItem.shop.image }}" alt="" />
+					</div>
+					<ul class="stock-item__shop-info">
+						{% for item in shopItem.shop.info %}
+							<li>{{ item }}</li>
+						{% endfor %}
+					</ul>
+					<div class="stock-item__contact">
+						<div class="stock-item__phone">{{ shopItem.shop.phone }}</div>
+						<a href="http://{{ shopItem.shop.site }}" class="stock-item__site">{{ shopItem.shop.site }}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text__block">
+			{{ shopItem.text }}
+		</div>
+	</div>
+	{% include 'stock.html' %}
+{% endblock %}

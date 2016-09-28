@@ -1,0 +1,28 @@
+@import "var";
+
+.breadcrumbs{
+	background: @c-white;
+	padding: 0 20px;
+
+	&__list{
+		border-bottom: 1px solid @c-link;
+		padding: 7px 10px 3px;
+		line-height: 30px;
+		color: @c-link;
+	}
+
+	&__item,
+	&__separator{
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	&__separator{
+		margin: 0 5px;
+
+		&:last-child{
+			display: none;
+		}
+	}
+
+}

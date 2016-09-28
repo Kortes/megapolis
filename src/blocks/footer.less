@@ -1,0 +1,72 @@
+@import "var";
+
+.footer{
+	overflow: hidden;
+	padding-top: 120px;
+
+	&__inner{
+		padding: 70px 25px 40px;
+		background: @c-light-blue;
+		position: relative;
+		box-shadow: 0 0 50px fade(@c-black, 20%);
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: -105px;
+			left: 0;
+			right: 0;
+			height: 150px;
+			background: url(../images/fox.png) no-repeat center bottom;
+		}
+	}
+
+	&__copy{
+		font-size: 8px;
+		line-height: 1.2;
+	}
+
+	&__sotial{
+		margin-bottom: 30px;
+		font-size: 0;
+
+		&-item{
+			display: inline-block;
+			margin: 0 10px 10px 0;
+		}
+
+		&-link{
+			display: block;
+			width: 38px;
+			height: 38px;
+			background: url(../images/sotial.png) no-repeat;
+
+			&_type{
+
+				&_fb{
+					background-position: center 0;
+				}
+
+				&_tw{
+					background-position: center -38px;
+				}
+
+				&_vk{
+					background-position: center -76px;
+				}
+
+				&_ok{
+					background-position: center -114px;
+				}
+
+				&_google{
+					background-position: center -152px;
+				}
+			}
+
+			&:hover{
+				opacity: 0.7;
+			}
+		}
+	}
+}

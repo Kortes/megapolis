@@ -1,0 +1,28 @@
+{% set info = [
+	{"type": "date", "text": "14 февраля"},
+	{"type": "time", "text": "10:25"},
+	{"type": "temperature", "text": "+18°"},
+	{"type": "rates", "list": [ 
+		{"symbol": "$", "value": "75.60"},
+		{"symbol": "€", "value": "78.10"}
+	]}
+]%}
+
+<ul class="info">
+	{% for item in info %}
+		<li class="info__item info__item_type_{{ item.type }}">
+			{% if item.text %}
+				{{ item.text }}
+			{% else %}
+				<ul class="info__rates">
+					{% for rates in item.list %}
+						<li class="info__rates-item">
+							<span class="info__rates-symbol">{{ rates.symbol }}</span>
+							{{ rates.value }}
+						</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,30 @@
+@import "var";
+
+.new{
+	background: @c-white;
+	border: 2px solid @c-light-blue;
+	border-radius: 5px;
+	padding: 20px;
+
+	&__list{
+		display: inline-flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		overflow: hidden;
+		height: 80px;
+		align-items: center;
+		vertical-align: middle;
+		width: 530px;
+	}
+
+	&__more{
+		display: inline-block;
+		vertical-align: middle;
+		width: 150px;
+		margin-right: 25px;
+		line-height: 26px;
+		font-size: 17px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+}

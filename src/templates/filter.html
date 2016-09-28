@@ -1,0 +1,120 @@
+{% set filter = {
+	"group1": [
+		{"title": "ОДЕЖДА", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value1", "name": "name1"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value2", "name": "name1"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value3", "name": "name1"}
+		]},
+		{"title": "ОБУВЬ И КОЖГАЛАНТЕРЕЯ", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value11", "name": "name2"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value12", "name": "name2"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value13", "name": "name2"}
+		]},
+		{"title": "СПОРТ И ОТДЫХ", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value21", "name": "name3"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value22", "name": "name3"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value23", "name": "name3"}
+		]},
+		{"title": "УКРАШЕНИЯ И АКСЕССУАРЫ", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value31", "name": "name4"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value32", "name": "name4"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value33", "name": "name4"}
+		]},
+		{"title": "ЭЛЕКТРОНИКА", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value41", "name": "name5"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value42", "name": "name5"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value43", "name": "name5"}
+		]},
+		{"title": "ДЕТСКИЕ ТОВАРЫ", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value51", "name": "name6"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value52", "name": "name6"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value53", "name": "name6"}
+		]}
+	],
+	"group2": [
+		{"title": "ОДЕЖДА", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value61", "name": "name7"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value62", "name": "name7"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value63", "name": "name7"}
+		]},
+		{"title": "ОБУВЬ И КОЖГАЛАНТЕРЕЯ", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value71", "name": "name8"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value72", "name": "name8"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value73", "name": "name8"}
+		]},
+		{"title": "СПОРТ И ОТДЫХ", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value81", "name": "name9"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value82", "name": "name9"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value83", "name": "name9"}
+		]},
+		{"title": "УКРАШЕНИЯ И АКСЕССУАРЫ", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value91", "name": "name10"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value92", "name": "name10"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value93", "name": "name10"}
+		]},
+		{"title": "ЭЛЕКТРОНИКА", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value101", "name": "name11"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value102", "name": "name11"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value103", "name": "name11"}
+		]},
+		{"title": "ДЕТСКИЕ ТОВАРЫ", "list": [
+			{"title": "МУЖСКАЯ ОБУВЬ", "value": "value111", "name": "name12"},
+			{"title": "ЖЕНСКАЯ ОБУВЬ", "value": "value112", "name": "name12"},
+			{"title": "ДЕТСКАЯ ОБУВЬ", "value": "value113", "name": "name12"}
+		]}
+	],
+	"count": "105"
+}%}
+
+<form class="filter__form" method="post">
+	<div class="filter__category">
+		<ul class="filter__cell">
+			{% for item in filter.group1 %}
+				<li class="filter__group">
+					<a href="#" class="filter__group-link">{{ item.title }}</a>
+					<ul class="filter__group-list">
+						{% for sub in item.list %}
+							<li class="filter__group-item">
+								<div class="filter__radio">
+									<input id="{{ sub.value }}" type="radio" name="{{ sub.name }}" class="filter__radio-input">
+									<label for="{{ sub.value }}" class="filter__radio-label">{{ sub.title }}</label>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% endfor %}
+		</ul><ul class="filter__cell">
+			{% for item in filter.group2 %}
+				<li class="filter__group">
+					<a href="#" class="filter__group-link">{{ item.title }}</a>
+					<ul class="filter__group-list">
+						{% for sub in item.list %}
+							<li class="filter__group-item">
+								<div class="filter__radio">
+									<input id="{{ sub.value }}" type="radio" name="{{ sub.name }}" class="filter__radio-input">
+									<label for="{{ sub.value }}" class="filter__radio-label">{{ sub.title }}</label>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="filter__bottom">
+		<div class="filter__result clearfix">
+			<input type="submit" class="filter__button" value="Показать результаты" />
+			<div class="filter__overflow">
+				Найдено: <span class="filter__result-value">{{ filter.count }} магазинов</span>
+			</div>
+		</div>
+		<div class="filter__info clearfix">
+			<input type="reset" class="filter__button" value="Очистить фильтр" />
+			<div class="filter__overflow">
+				<a href="#" class="filter__group-close">Мужская обувь</a>
+				<a href="#" class="filter__group-close">Спортивная обувь</a>
+			</div>
+		</div>
+	</div>
+</form>

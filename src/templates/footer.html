@@ -1,0 +1,23 @@
+{% set footer = {
+	"copy": "© ТРЦ «Мегаполис» 2016.<br>Все права на&nbsp;материалы, находящиеся на&nbsp;сайте охраняются в&nbsp;соответствии с&nbsp;законодательством РФ, в&nbsp;том&nbsp;числе, об&nbsp;авторском праве и&nbsp;смежных правах. При&nbsp;любом использовании материалов сайта ",
+	"sotial": [
+		{"link": "#", "type": "fb"},
+		{"link": "#", "type": "tw"},
+		{"link": "#", "type": "vk"},
+		{"link": "#", "type": "ok"},
+		{"link": "#", "type": "google"}
+	]
+}%}
+
+<div class="footer">
+	<div class="footer__inner">
+		<ul class="footer__sotial">
+			{% for item in footer.sotial %}
+				<li class="footer__sotial-item">
+					<a href="{{ item.link }}" class="footer__sotial-link footer__sotial-link_type_{{ item.type }}"></a>
+				</li>
+			{% endfor %}
+		</ul>
+		<div class="footer__copy">{{ footer.copy }}</div>
+	</div>
+</div>

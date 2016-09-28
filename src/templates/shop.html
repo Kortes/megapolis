@@ -1,0 +1,25 @@
+{% set shop = {
+	"count": "246",
+	"link": "#",
+	"list" :[
+		{"link": "#", "image": "./images/shop1.jpg", "title": "title1"},
+		{"link": "#", "image": "./images/shop2.jpg", "title": "title2"},
+		{"link": "#", "image": "./images/shop3.jpg", "title": "title3"},
+		{"link": "#", "image": "./images/shop4.jpg", "title": "title4"},
+		{"link": "#", "image": "./images/shop1.jpg", "title": "title5"}
+	]
+}%}
+
+<div class="shop">
+	<div class="shop__wrapper">
+		<ul class="shop__list">
+			{% for item in shop.list -%}
+				<li class="shop__item">
+					<a href="{{ item.link }}" class="shop__link">
+						<img src="{{ item.image }}" alt="{{ item.title }}" class="shop__image" />
+					</a>
+				</li>
+			{%- endfor %}
+		</ul>
+	</div><a href="{{ shop.link }}" class="shop__more">показать все {{ shop.count }} магазины</a>
+</div>

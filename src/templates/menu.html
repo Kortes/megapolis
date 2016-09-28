@@ -1,0 +1,14 @@
+{% set menu = [
+	{"link": "#", "title": "О центре", "active": true},
+	{"link": "#", "title": "Магазины"},
+	{"link": "#", "title": "Координаты"},
+	{"link": "#", "title": "Арендаторам"}
+]%}
+
+<ul class="menu">
+	{% for item in menu -%}
+		<li class="menu__item">
+			<a href="{{ item.link }}" class="menu__link {% if item.active %}menu__link_active{% endif %}">{{ item.title }}</a>
+		</li>
+	{%- endfor %}
+</ul>

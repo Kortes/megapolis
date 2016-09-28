@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% set pageTitle = "Магазины" %}
+
+{% set breadcrumbs = [
+	{"link": "/", "title": "Главная"},
+	{"link": "/shops.html", "title": "Магазины"}
+]%}
+
+{% set shops = [
+	{"letter": "a", "list": [
+		{"link": "#", "title": "A.S. Studio1", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock1.jpg"},
+		{"link": "#", "title": "A.S. Studio2", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock2.jpg"},
+		{"link": "#", "title": "A.S. Studio3", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock3.jpg"},
+		{"link": "#", "title": "A.S. Studio4", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock4.jpg"},
+		{"link": "#", "title": "A.S. Studio5", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock1.jpg"},
+		{"link": "#", "title": "A.S. Studio6", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock2.jpg"},
+		{"link": "#", "title": "A.S. Studio7", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock3.jpg"},
+		{"link": "#", "title": "A.S. Studio8", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock4.jpg"}
+	]},
+	{"letter": "b", "list": [
+		{"link": "#", "title": "B.S. Studio1", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock1.jpg"},
+		{"link": "#", "title": "B.S. Studio2", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock2.jpg"},
+		{"link": "#", "title": "B.S. Studio3", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock3.jpg"},
+		{"link": "#", "title": "B.S. Studio4", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock4.jpg"},
+		{"link": "#", "title": "B.S. Studio5", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock1.jpg"},
+		{"link": "#", "title": "B.S. Studio6", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock2.jpg"},
+		{"link": "#", "title": "B.S. Studio7", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock3.jpg"}
+	]},
+	{"letter": "c", "list": [
+		{"link": "#", "title": "C.S. Studio1", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock1.jpg"},
+		{"link": "#", "title": "C.S. Studio2", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock2.jpg"},
+		{"link": "#", "title": "C.S. Studio3", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock3.jpg"},
+		{"link": "#", "title": "C.S. Studio4", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock4.jpg"},
+		{"link": "#", "title": "C.S. Studio5", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock1.jpg"},
+		{"link": "#", "title": "C.S. Studio6", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock2.jpg"}
+	]},
+	{"letter": "d", "list": [
+		{"link": "#", "title": "D.S. Studio1", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock1.jpg"},
+		{"link": "#", "title": "D.S. Studio2", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock2.jpg"},
+		{"link": "#", "title": "D.S. Studio3", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock3.jpg"},
+		{"link": "#", "title": "D.S. Studio4", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock4.jpg"},
+		{"link": "#", "title": "D.S. Studio5", "section": "Женская одежда", "position": "2 этаж", "image": "./images/stock1.jpg"}
+	]}
+]%}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block top %}
+	<div class="page__title filter">
+		<div>
+			<h1>{{ pageTitle }}</h1>
+			<a href="#" class="filter__link filter__link_claster filter__link_active"></a>
+			<a href="#" class="filter__link filter__link_list"></a>
+		</div>
+		<div class="filter__list">
+			<a href="#" class="filter__item filter__item_search">Поиск</a>
+			<a href="#" class="filter__item filter__item_category">Торговая категория</a>
+		</div>
+		<div class="filter__slide">
+			{% include 'search.html' %}
+		</div>
+		<div class="filter__slide">
+			{% include 'filter.html' %}
+		</div>
+	</div>
+	{% include 'breadcrumbs.html' %}
+{% endblock %}
+
+{% block content %}
+	{% include 'shops.html' %}
+{% endblock %}

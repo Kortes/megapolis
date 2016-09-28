@@ -1,0 +1,30 @@
+@import "var";
+
+.menu{
+	&__item{
+		display: inline-block;
+
+		&:last-child{
+			.menu__link{
+				border: none;
+			}
+		}
+	}
+
+	&__link{
+		display: block;
+		line-height: 52px;
+		padding: 3px 20px 0;
+		text-decoration: none !important;
+		font-size: 13px;
+		color: @c-white;
+		font-weight: 400;
+		border-right: 1px solid darken(@c-dark, 11.7%);
+
+		&:hover,
+		&_active{
+			background: darken(@c-dark, 10%);
+			color: @c-yellow;
+		}
+	}
+}
