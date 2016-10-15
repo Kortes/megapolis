@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% set map = {
+	"legend": [
+		{"type": "product", "title": "Продукты", "color": "#102A83"},
+		{"type": "sport", "title": "Спорттовары, одежда для спорта и отдыха", "color": "#A7D2AC"},
+		{"type": "home", "title": "Товары для дома", "color": "#D5B369"},
+		{"type": "women", "title": "Женская одежда", "color": "#EE7A00"},
+		{"type": "linen", "title": "Белье", "color": "#FFEB00"},
+		{"type": "accessories", "title": "Аксессуары", "color": "#005A2E"},
+		{"type": "services", "title": "Услуги", "color": "#E10014"},
+		{"type": "beauty", "title": "Красота и здоровье", "color": "#4688C4"},
+		{"type": "special", "title": "Специализированные магазины", "color": "#A65B45"},
+		{"type": "electronic", "title": "Аудио, видео, электроника", "color": "#9C9E9F"},
+		{"type": "catering", "title": "Кафе и рестораны", "color": "#9EDBF4"},
+		{"type": "zoo", "title": "Зоотовары", "color": "#DCE081"},
+		{"type": "gifts", "title": "Сувениры и подарки", "color": "#FAD6C8"}
+	],
+	"list": [
+		{
+			"title": "1",
+			"size": "0 0 815 418",
+			"list": [
+				{"wall": "M 5 220 L 200 23 L 350 170 Q 420 100 490 157 L 626 23 L 806 203 L 614 395 L 487 270 L 473 281 L 463 287 L 466 294 L 447 303 Q 414 314 381 301 L 363 295 L 367 285 L 356 277 L 343 266 L 198 412 Z"},
+				{"id": "a100", "type": "product", "point": "5 220 200 23 350 170 320 202 316 198 150 365"},
+				{"id": "a101", "type": "zoo", "point": "357 178 365 186 338 213 330 205"},
+				{"id": "a102", "type": "accessories", "point": "316 198 327 209 305 232 294 221", "img": "./images/diva.png"},
+				{"id": "a103", "type": "electronic", "point": "322 244 343 266 305 304 284 284", "img": "./images/mts.jpg"},
+				{"id": "a104", "type": "electronic", "point": "294 221 305 232 279 260 267 247", "img": "./images/megafon.jpg"},
+				{"id": "a105", "type": "electronic", "point": "284 284 305 304 278 331 257 310", "img": "./images/euroset.jpg"},
+				{"id": "a106", "type": "beauty", "point": "150 365 216 299 243 325 221 346 242 367 198 412", "img": "./images/letoile.jpg"},
+				{"id": "a107", "type": "services", "point": "243 325 221 346 242 367 264 346"},
+				{"id": "a108", "type": "special", "point": "245 297 253 289 260 295 252 303"},
+				{"id": "a109", "type": "special", "point": "253 289 260 282 267 288 260 295"},
+				{"id": "a110", "type": "special", "point": "239 290 254 275 260 282 245 297"},
+				{"id": "a113", "type": "beauty", "point": "320 202 350 170 357 178 327 209", "img": "./images/newzarya.jpg"},
+				{"id": "b101", "type": "services", "point": "487 270 529 229 576 274 534 317", "img": "openbank.png"},
+				{"id": "b102", "type": "beauty", "point": "539 215 567 185 599 217 572 245", "img": "./images/healthsource.jpg"},
+				{"id": "b103", "type": "catering", "point": "551 333 593 292 626 325 585 367", "img": "./images/polbeykeri.png"},
+				{"id": "b104", "type": "linen", "point": "572 245 599 217 618 236 591 264", "img": "./images/milavitsa.jpg"},
+				{"id": "b105", "type": "linen", "point": "625 310 636 300 672 337 655 354 635 334 642 327", "img": "./images/defile.png"},
+				{"id": "b106", "type": "beauty", "point": "591 264 621 233 647 259 616 290"},
+				{"id": "b107", "type": "women", "point": "636 300 673 263 710 299 672 337"},
+				{"id": "b108", "type": "linen", "point": "621 233 632 221 659 247 647 259", "img": "/images/palmetta.jpg"},
+				{"id": "b110", "type": "home", "point": "632 221 651 203 677 229 659 247"},
+				{"id": "b111", "type": "linen", "point": "673 263 692 244 729 280 710 299"},
+				{"id": "b112", "type": "sport", "point": "651 203 728 126 806 203 729 280", "img": "./images/profmax.png"},
+				{"id": "b115", "type": "women", "point": "567 185 592 160 618 186 644 159 670 184 618 236", "img": "./images/incity.jpg"},
+				{"id": "b116", "type": "accessories", "point": "592 160 619 134 644 159 618 186"},
+				{"id": "b117", "type": "catering", "point": "508 139 626 23 659 57 543 172"},
+				{"id": "b118", "type": "women", "point": "614 102 659 57 728 126 683 170", "img": "./images/oodji.jpg"},
+				{"id": "b121", "type": "accessories", "point": "500 168 512 155 527 170 515 182", "img": "./images/marmalato.jpg"},
+				{"id": "b122", "type": "special", "point": "593 123 601 115 608 122 600 130"},
+				{"id": "b123", "type": "services", "point": "574 142 581 135 588 142 581 149"},
+				{"id": "b124", "type": "services", "point": "566 150 574 142 581 149 573 157", "img": "./images/kassir.png"},
+				{"id": "b125", "type": "services", "point": "581 135 589 127 596 134 588 142"},
+				{"id": "b126", "type": "special", "point": "609 131 615 137 606 146 600 140", "img": "./images/fitmenu.jpg"},
+				{"id": "b132", "type": "services", "point": "534 317 576 274 593 292 551 333"},
+				{"id": "c101", "type": "electronic", "point": "390 200 440 200 440 225 390 225", "img": "./images/euroset.jpg"},
+				{"id": "c102", "type": "catering", "point": "338 213 361 191 381 191 381 244 377 244", "img": "./images/coffeeshop.jpg"},
+				{"id": "c103", "type": "electronic", "path": "M 415 167 Q 448 167 469 191 L 415 191 Z"},
+				{"id": "c104", "type": "electronic", "path": "M 361 191 Q 380 167 415 167 L 415 191 Z"},
+				{"id": "c106", "type": "services", "point": "483 164 490 157 515 182 508 189"},
+				{"id": "c108", "type": "gifts", "point": "430 237 440 237 440 246 430 246"},
+				{"id": "c109", "type": "catering", "point": "322 244 331 235 351 257 343 266"},
+				{"id": "c113", "type": "services", "point": "478 250 492 236 507 251 492 265"},
+				{"id": "c114", "type": "catering", "point": "455 270 463 265 473 281 463 287"},
+				{"id": "c117", "type": "special", "point": "430 227 440 227 440 236 430 236"},
+				{"id": "c118", "type": "services", "point": "439 276 455 270 466 294 447 303", "img": "./images/sberbank.png"},
+				{"id": "c122", "type": "special", "point": "390 227 400 227 400 239 390 239"},
+				{"id": "c123", "type": "gifts", "point": "463 265 478 250 492 265 473 281"},
+				{"id": "c128", "type": "catering", "point": "356 277 362 265 389 275 381 301 363 295 367 285", "img": "./images/subway.jpg"},
+				{"id": "c130", "type": "special", "point": "492 236 514 214 529 229 507 251"},
+				{"id": "c132", "type": "catering", "point": "343 266 351 257 362 265 356 277"},
+				{"id": "c142", "type": "electronic", "point": "450 195 490 195 500 205 460 244 450 244"}
+			]
+		}
+	]
+}%}
+
+{% block content %}
+<div class="map">
+	<ul class="map__legend">
+		{% for legend in map.legend %}
+			<li class="map__legend-item" data-type="{{ legend.type }}">
+				<div class="map__legend-color" style="background: {{ legend.color }}"></div>
+				{{ legend.title }}
+			</li>
+		{% endfor %} 
+	</ul>
+	{% for floor in map.list %}
+		<div class="map__floor map__floor_{{ floor.title }}">
+			<div class="map__title">Этаж {{ floor.title }}</div>
+			<svg width="100%" height="100%" viewBox="{{ floor.size }}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<style>
+					{% for bg in map.legend %}
+						.map__shop_type_{{ bg.type }}{
+							fill: {{ bg.color }}
+						}
+					{% endfor %}
+				</style>
+			    {% for item in floor.list %}
+			    	{% if item.point %}
+			    		<g class="map__group">
+				    		<polygon class="map__shop {% if item.type %}map__shop_type_{{ item.type }}{% endif %}" points="{{ item.point }}"></polygon>
+			    			{% if item.img %}
+			    				<image class="map__logo" xlink:href="{{ item.img }}" />
+			    			{% endif %}
+		    			</g>
+			    	{% elseif item.path %}
+			    		<g class="map__group">
+				    		<path d="{{ item.path }}" class="map__shop"></path>
+				    		{% if item.img %}
+			    				<image class="map__logo" xlink:href="{{ item.img }}" />
+			    			{% endif %}
+			    		</g>
+		    		{% elseif item.wall %}
+			    		<path d="{{ item.wall }}" class="map__wall"></path>
+			    	{% endif %}
+			    {% endfor %} 
+			</svg>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}
