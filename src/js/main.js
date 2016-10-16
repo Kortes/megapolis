@@ -104,4 +104,14 @@ $(document).ready(function() {
 			$(".map__shop_type_" + self.data("type")).myRemoveClass("map__shop_active");
 		});
 	}
+
+	$(".map__preview-link").click(function(e){
+		e.preventDefault();
+		var self = $(this);
+		var index = self.data("index");
+		$(".map__preview").removeClass("map__preview_active");
+		$(".map__floor").fadeOut(500);
+		self.closest(".map__preview").addClass("map__preview_active");
+		$(".map__floor_" + index).fadeIn(200)
+	});
 });

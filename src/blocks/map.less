@@ -5,6 +5,7 @@
 		stroke: @c-text;
 		stroke-width: 1px;
 		opacity: 0.3;
+		fill: @c-white;
 
 		&:hover{
 			opacity: 1;
@@ -63,16 +64,33 @@
 		transform: translateX(-50%);
 	}
 
+	&__wrapper{
+		height: 400px;
+		overflow: hidden;
+	}
+
 	&__floor{
 		position: relative;
+		display: none;
+		height: 400px;
+
+		&_active{
+			display: block;
+		}
 	}
 
 	&__title{
 		font-weight: 600;
 		font-size: 30px;
-		color: @c-title;
 		position: absolute;
 		top: 0;
 		right: 0;
+	}
+
+	&__preview{
+		display: inline-block;
+		vertical-align: top;
+		width: 15%;
+		text-align: center;
 	}
 }
