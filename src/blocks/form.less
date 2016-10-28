@@ -1,0 +1,57 @@
+@import "var";
+
+.form{
+	padding: 0 10px;
+	width: 550px;
+
+	&__legend{
+		color: @c-dark;
+		font-size: 18px;
+		line-height: 26px;
+		font-weight: 600;
+		margin-bottom: 30px;
+	}
+
+	&__row{
+		margin-bottom: 25px;
+	}
+
+	&__label{
+		width: 125px;
+		float:left;
+		padding: 7px 0;
+		font-weight: 400;
+	}
+
+	&__wrapper{
+		padding-left: 135px;
+	}
+
+	&__input,
+	&__textarea{
+		width: 100%;
+		box-sizing: border-box;
+		font: 14px/1.5 'Helios', Arial, sans-serif;
+		padding: 8px 7px 6px;
+		box-shadow: 0 0 1px @c-link;
+		border: none;
+		border-radius: 4px;
+	}
+
+	&__textarea{
+		height: 150px;
+		resize: none;
+	}
+
+	&__submit{
+		border: none;
+		background: lighten(@c-link, 10%);
+		padding: 0 50px;
+		height: 42px;
+		font-size: 14px;
+		font-weight: 600;
+		color: @c-white;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+}
