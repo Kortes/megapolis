@@ -25,6 +25,12 @@
 {% block content %}
 	{% include 'shop.html' %}
 	{% include 'banners.html' %}
+	{% include 'video-preview.html' %}
+	{% set advertising = true %}
 	{% include 'stock.html' %}
 	{% include 'new.html' %}
+{% endblock %}
+
+{% block script %}
+	<script src="ui/customCarousel/customCarousel.js"></script>
 {% endblock %}

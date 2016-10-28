@@ -1,0 +1,79 @@
+@import "var";
+
+.video-preview{
+	display: inline-block;
+	width: 250px;
+	margin-left: 15px;
+	vertical-align: top;
+	position: relative;
+	height: 214px;
+	background: @c-white url(../images/video-name.png) no-repeat center 20px;
+	box-sizing: border-box;
+	padding: 75px 40px 25px;
+
+	&:before,
+	&:after{
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 20px;
+		background: lighten(@c-dark, 14%) url(../images/video-line.png) repeat-y left 2px;
+	}
+
+	&:after{
+		left: 0;
+	}
+
+	&:before{
+		right: 0;
+	}
+
+	&__list{
+		height: 112px;
+		overflow: hidden;
+	}
+
+	&__link{
+		height: 112px;
+		width: 170px;
+		display: block;
+		position: relative;
+	}
+
+	&__image{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		max-height: 112px;
+	}
+
+	&__controls{
+		position: absolute;
+		bottom: 17px;
+		height: 7px;
+		left: 40px;
+		right: 40px;
+		text-align: center;
+	}
+
+	&__point{
+		display: inline-block;
+		margin: 0 3px;
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		background: lighten(@c-dark, 41%);
+		cursor: pointer;
+
+		&_active{
+			background: @c-stock-blue;
+		}
+	}
+}
