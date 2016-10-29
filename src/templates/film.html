@@ -1,0 +1,56 @@
+{% set film = {
+	"title": "КИНОМАКС 3D - Дуэлянт",
+	"video": "-jnx9b6NQ2Y",
+	"info": {
+		"production": "Россия",
+		"network": "29.09.16",
+		"premiere": "09.09.16",
+		"genre": "Драма",
+		"producer": "Алексей Мизгирёв",
+		"duration": "1ч. 50мин.",
+		"format": "2D",
+		"cast": "Пётр Фёдоров, Владимир Машков, Юлия Хлынина, Франциска Петри, Мартин Вуттке",
+		"plot": "В центре сюжета профессиональный дуэлянт, который зарабатывает на жизнь, участвуя в поединках за других людей."
+	}
+}%}
+
+<div class="film">
+	<h2 class="film__title">{{ film.title }}</h2>
+	<iframe width="640" height="360" src="https://www.youtube.com/embed/{{ film.video }}" frameborder="0" allowfullscreen></iframe>
+	<ul class="film__info">
+		<li class="film__imfo-item">
+			Производство: 
+			<span class="film__info-value">{{ film.info.production }}</span>
+		</li>
+		<li class="film__imfo-item">
+			Премьера в сети Киномакс: 
+			<span class="film__info-value">{{ film.info.network }}</span>
+		</li>
+		<li class="film__imfo-item">
+			Мировая премьера: 
+			<span class="film__info-value">{{ film.info.premiere }}</span>
+		</li>
+		<li class="film__imfo-item">
+			Жанр: 
+			<span class="film__info-value">{{ film.info.genre }}</span>
+		</li>
+		<li class="film__imfo-item">
+			Режиссер: 
+			<span class="film__info-value">{{ film.info.producer }}</span>
+		</li>
+		<li class="film__imfo-item">
+			Продолжительность: 
+			<span class="film__info-value">{{ film.info.duration }}</span>
+		</li>
+		<li class="film__imfo-item">
+			В формате: 
+			<span class="film__info-value">{{ film.info.format }}</span>
+		</li>
+	</ul>
+	<div class="film__discription">
+		<b>В ролях:</b> {{ film.info.cast }}
+	</div>
+ 	<div class="film__discription">
+		<b>Сюжет:</b> {{ film.info.plot }}
+	</div>
+</div>
