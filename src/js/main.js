@@ -15,19 +15,23 @@ $(document).ready(function() {
 		}
 	});
 
-	$(".video-preview__list").customCarousel({
-		changeSelector: $(".video-preview__point"),
-		slideTimeout: 5000,
-		afterSlideCallback: function(e){
-			$(".video-preview__point").removeClass("video-preview__point_active");
-			$(".video-preview__point").eq(e.currentIndex).addClass("video-preview__point_active");
-		}
-	});
+	if ($(".video-preview__list").length > 0) {
+		$(".video-preview__list").customCarousel({
+			changeSelector: $(".video-preview__point"),
+			slideTimeout: 5000,
+			afterSlideCallback: function(e){
+				$(".video-preview__point").removeClass("video-preview__point_active");
+				$(".video-preview__point").eq(e.currentIndex).addClass("video-preview__point_active");
+			}
+		});
+	}
 
-	$(".stock__advertising").customCarousel({
-		nextSelector: $(".stock__advertising-arrow-next"),
-        prevSelector: $(".stock__advertising-arrow-prev")
-	});
+	if ($(".stock__advertising").length > 0) {
+		$(".stock__advertising").customCarousel({
+			nextSelector: $(".stock__advertising-arrow-next"),
+	        prevSelector: $(".stock__advertising-arrow-prev")
+		});
+	}
 
 	$(".filter__item").click(function(e){
 		e.preventDefault();

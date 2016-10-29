@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% set pageTitle = "Развлечения" %}
+
+{% set breadcrumbs = [
+	{"link": "/", "title": "Главная"}
+]%}
+
+{% set shopItem = {
+	"shop": {
+		"image": "./images/kinomax.jpg",
+		"info": [
+			"4 ЭТАЖ", "СЕКЦИЯ а-400", "с 10:00 до 02:00", "Ежедневно"
+		],
+		"phone": "+7 (343) 385 05 13",
+		"site": "kinomax.ru"
+	}
+}%}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block top %}
+	<div class="page__title">
+		<div>
+			<h1>{{ pageTitle }}</h1>
+		</div>
+	</div>
+	{% include 'breadcrumbs.html' %}
+{% endblock %}
+
+{% block content %}
+	<div class="text">
+		<div class="text__content">
+			<div class="text__content-inner">
+				<h2>КИНОМАКС 3D «Мегаполис»</h2>
+				<p>«Киномакс 3D Мегаполис» - это 9 просторных стильных залов (включая комфотный VIP зал), оснащенных новейшим кинопроекционным оборудованием и суперсовременной акустической аппаратурой. Уникальный дизайн фойе и консешн-бара создаст позитивную атмосферу и хорошее настроение для просмотра фильмов или мультфильмов.</p>
+
+				<p>«Киномакс 3D Мегаполис» - это 9 просторных стильных залов (включая комфотный VIP зал), оснащенных новейшим кинопроекционным оборудованием и суперсовременной акустической аппаратурой. Уникальный дизайн фойе и консешн-бара создаст позитивную атмосферу </p>
+			</div>
+		</div>
+		<div class="text__aside">
+			<div class="text__aside-inner">
+				<div class="stock-item__shop">
+					<div class="stock-item__image">
+						<img class="stock-item__img" src="{{ shopItem.shop.image }}" alt="" />
+					</div>
+					<ul class="stock-item__shop-info">
+						{% for item in shopItem.shop.info %}
+							<li>{{ item }}</li>
+						{% endfor %}
+					</ul>
+					<div class="stock-item__contact">
+						<div class="stock-item__phone">{{ shopItem.shop.phone }}</div>
+						<a href="http://{{ shopItem.shop.site }}" class="stock-item__site">{{ shopItem.shop.site }}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text__block">
+			{% include 'over-film.html' %}
+			<div class="gallery">
+				<ul class="gallery__big">
+					<li class="gallery__big-item gallery__big-item_active">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/f00000" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+					<li class="gallery__big-item">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/ff0000" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+					<li class="gallery__big-item">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/fff000" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+					<li class="gallery__big-item">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/ffff00" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+					<li class="gallery__big-item">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/fffff0" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+					<li class="gallery__big-item">
+						<a href="./images/big.jpg" class="fancybox-link gallery__big-link" rel="gallery">
+							<img src="http://placehold.it/730x420/00000f" class="gallery__big-img" alt=""/>
+						</a> 
+					</li>
+				</ul>
+				<ul class="gallery__preview">
+					<li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/f00000" class="gallery__preview-img" alt=""/>
+						</a>
+					</li><li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/ff0000" class="gallery__preview-img" alt=""/>
+						</a>
+					</li><li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/fff000" class="gallery__preview-img" alt=""/>
+						</a>
+					</li><li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/ffff00" class="gallery__preview-img" alt=""/>
+						</a>
+					</li><li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/fffff0" class="gallery__preview-img" alt=""/>
+						</a>
+					</li><li class="gallery__preview-item">
+						<a href="#" class="gallery__preview-link">
+							<img src="http://placehold.it/120x90/00000f" class="gallery__preview-img" alt=""/>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+{% endblock %}

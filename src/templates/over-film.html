@@ -1,0 +1,20 @@
+{% set over = [
+	{"link": "#", "image": "./images/video-preview.jpg", "title": "Дуэлянт"},
+	{"link": "#", "image": "./images/video-preview.jpg", "title": "Инферно"},
+	{"link": "#", "image": "./images/video-preview.jpg", "title": "Коллектор"},
+	{"link": "#", "image": "./images/video-preview.jpg", "title": "Дуэлянт"},
+	{"link": "#", "image": "./images/video-preview.jpg", "title": "Инферно"}
+]%}
+
+<ul class="over-film">
+	{% for item in over %}
+		<li class="over-film__item">
+			<a href="{{ item.link }}" class="over-film__link">
+				<span class="over-film__image">
+					<img src="{{ item.image }}" alt="{{ item.title }}" class="over-film__img" />
+				</span>
+				<span class="over-film__title">{{ item.title }}</span>
+			</a>
+		</li>
+	{% endfor %}
+</ul>
