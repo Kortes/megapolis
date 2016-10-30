@@ -27,7 +27,7 @@
 	],
 	"list": [
 		{
-			"title": "0",
+			"title": "-1",
 			"size": "0 0 815 418",
 			"list": [
 				{"wall": "M 20 198 L 210 8 L 347 145 Q 410 90 479 135 L 539 75 L 588 125 L 529 184 L 470 242 Q 405 300 359 236 L 209 387 Z"},
@@ -319,57 +319,112 @@
 	]
 }%}
 
-{% block content %}
-<div class="map">
-	<ul class="map__legend">
-		{% for legend in map.legend %}
-			<li class="map__legend-item" data-type="{{ legend.type }}">
-				<div class="map__legend-color" style="background: {{ legend.color }}"></div>
-				{{ legend.title }}
-			</li>
-		{% endfor %} 
-	</ul>
-	<div class="map__wrapper">
-	{% for floor in map.list %}
-		<div class="map__floor map__floor_{{ floor.title }} {% if floor.title == '1' %}map__floor_active{% endif %}">
-			<div class="map__title">Этаж {{ floor.title }}</div>
-			<svg id="#floor{{ floor.title }}" width="100%" height="100%" viewBox="{{ floor.size }}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-				<style>
-					{% for bg in map.legend %}
-						.map__shop_type_{{ bg.type }}{
-							fill: {{ bg.color }}
-						}
-					{% endfor %}
-				</style>
-			    {% for item in floor.list %}
-			    	{% if item.point %}
-			    		<g class="map__group">
-				    		<polygon class="map__shop {% if item.type %}map__shop_type_{{ item.type }}{% endif %}" points="{{ item.point }}"></polygon>
-			    			{% if item.img %}
-			    				<image class="map__logo" xlink:href="{{ item.img }}" />
-			    			{% endif %}
-		    			</g>
-			    	{% elseif item.path %}
-			    		<g class="map__group">
-				    		<path d="{{ item.path }}" class="map__shop {% if item.type %}map__shop_type_{{ item.type }}{% endif %}"></path>
-				    		{% if item.img %}
-			    				<image class="map__logo" xlink:href="{{ item.img }}" />
-			    			{% endif %}
-			    		</g>
-		    		{% elseif item.wall %}
-			    		<path d="{{ item.wall }}" class="map__wall"></path>
-			    	{% endif %}
-			    {% endfor %}
-			</svg>
+{% set pageTitle = "Арендаторам" %}
+
+{% set breadcrumbs = [
+	{"link": "/", "title": "Главная"}
+]%}
+
+{% set shopItem = {
+	"text": "<h2>Карта свободных площадей</h2><p>* Свободная площадь подсвечивается белым цветом. Чтобы оставить заявку, нажмите на свободную площадь либо на ссылку «Заявка на аренду помещения», которая находится слева.</p><p>* Свободная площадь подсвечивается белым цветом. Чтобы оставить заявку, нажмите на свободную площадь либо на ссылку «Заявка на аренду помещения», которая находится слева.</p><p><a href='#'>Правила внутреннего распорядка</a></p>",
+	"shop": {
+		"info": [
+			"Понедельник - Воскресение", "с 10:00 до 22:00"
+		],
+		"phone": "+7 (343) 385 1000",
+		"site": "megapoliss66.ru"
+	}
+}%}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block top %}
+	<div class="page__title">
+		<div>
+			<h1>{{ pageTitle }}</h1>
 		</div>
-	{% endfor %}
 	</div>
-	<ul class="map__list">
-		{% for floor in map.list %}
-			<li class="map__preview {% if floor.title == '1' %}map__preview_active{% endif %}">
-				<a href="#" class="map__preview-link" data-index="{{ floor.title }}">Этаж {{ floor.title }}</a>
-			</li>
-		{% endfor %}
-	</ul>
-</div>
+	{% include 'breadcrumbs.html' %}
+{% endblock %}
+
+{% block content %}
+	<div class="text">
+		<div class="text__content">
+			<div class="text__content-inner">
+				{{ shopItem.text }}
+			</div>
+		</div>
+		<div class="text__aside">
+			<div class="text__aside-inner">
+				<div class="stock-item__shop">
+					<div class="stock-item__image">
+						<a href="какойтофайл.doc" class="stock-item__link" data-size="(40 кб)"><span>Заявка на&nbsp;аренду помещения</span></a>
+					</div>
+					<ul class="stock-item__shop-info">
+						{% for item in shopItem.shop.info %}
+							<li>{{ item }}</li>
+						{% endfor %}
+					</ul>
+					<div class="stock-item__contact">
+						<div class="stock-item__phone">{{ shopItem.shop.phone }}</div>
+						<a href="http://{{ shopItem.shop.site }}" class="stock-item__site">{{ shopItem.shop.site }}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text__block">
+			<div class="map">
+				<ul class="map__list">
+					{% for floor in map.list %}
+						<li class="map__preview {% if floor.title == '1' %}map__preview_active{% endif %}">
+							<a href="#" class="map__preview-link" data-index="{{ floor.title }}"><span>Этаж {{ floor.title }}</span></a>
+						</li>
+					{% endfor %}
+				</ul>
+				<div class="map__wrapper">
+				{% for floor in map.list %}
+					<div class="map__floor map__floor_{{ floor.title }} {% if floor.title == '1' %}map__floor_active{% endif %}">
+						<div class="map__title">Этаж {{ floor.title }}</div>
+						<svg id="#floor{{ floor.title }}" width="100%" height="100%" viewBox="{{ floor.size }}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<style>
+								{% for bg in map.legend %}
+									.map__shop_type_{{ bg.type }}{
+										fill: {{ bg.color }}
+									}
+								{% endfor %}
+							</style>
+						    {% for item in floor.list %}
+						    	{% if item.point %}
+						    		<g class="map__group">
+							    		<polygon class="map__shop {% if item.type %}map__shop_type_{{ item.type }}{% endif %}" points="{{ item.point }}"></polygon>
+						    			{% if item.img %}
+						    				<image class="map__logo" xlink:href="{{ item.img }}" />
+						    			{% endif %}
+					    			</g>
+						    	{% elseif item.path %}
+						    		<g class="map__group">
+							    		<path d="{{ item.path }}" class="map__shop {% if item.type %}map__shop_type_{{ item.type }}{% endif %}"></path>
+							    		{% if item.img %}
+						    				<image class="map__logo" xlink:href="{{ item.img }}" />
+						    			{% endif %}
+						    		</g>
+					    		{% elseif item.wall %}
+						    		<path d="{{ item.wall }}" class="map__wall"></path>
+						    	{% endif %}
+						    {% endfor %}
+						</svg>
+					</div>
+				{% endfor %}
+				</div>
+				<ul class="map__legend">
+					{% for legend in map.legend %}
+						<li class="map__legend-item" data-type="{{ legend.type }}">
+							<div class="map__legend-color" style="background: {{ legend.color }}"></div>
+							{{ legend.title }}
+						</li>
+					{% endfor %} 
+				</ul>
+			</div>
+		</div>
+	</div>
 {% endblock %}

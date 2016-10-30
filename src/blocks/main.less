@@ -108,6 +108,37 @@ a{
     &:hover{
         text-decoration: none;
     }
+
+    &[href$="doc"],
+    &[href$="docx"]{
+        display: inline-block;
+        padding: 15px 10px 5px 80px;
+        position: relative;
+        font-weight: 500;
+        line-height: 18px;
+        text-decoration: none;
+        background-image: url(../images/doc.png);
+        background-repeat: no-repeat;
+        background-position: 20px 15px;
+
+        & > span{
+            text-decoration: underline;
+        }
+
+        &:hover{
+            & > span{
+                text-decoration: none;
+            }
+        }
+
+        &:after{
+            content: attr(data-size);
+            display: block;
+            font-weight: 400;
+            font-size: 12px;
+            color: @c-dark;
+        }
+    }
 }
 
 .clearfix:before,
