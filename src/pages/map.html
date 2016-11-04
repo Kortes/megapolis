@@ -78,7 +78,7 @@
 				{"id": "b108", "type": "linen", "point": "621 233 632 221 659 247 647 259", "img": "/images/palmetta.jpg"},
 				{"id": "b110", "type": "home", "point": "632 221 651 203 677 229 659 247"},
 				{"id": "b111", "type": "linen", "point": "673 263 692 244 729 280 710 299"},
-				{"id": "b112", "type": "sport", "point": "651 203 728 126 806 203 729 280", "img": "./images/profmax.png"},
+				{"id": "b112", "type": "sport", "point": "651 203 728 126 806 203 729 280", "img": "./images/banner1.png"},
 				{"id": "b115", "type": "women", "point": "567 185 592 160 618 186 644 159 670 184 618 236", "img": "./images/incity.jpg"},
 				{"id": "b116", "type": "accessories", "point": "592 160 619 134 644 159 618 186"},
 				{"id": "b117", "type": "catering", "point": "508 139 626 23 659 57 543 172"},
@@ -398,7 +398,7 @@
 						    		<g class="map__group">
 							    		<polygon class="map__shop {% if item.type %}map__shop_type_{{ item.type }}{% endif %}" points="{{ item.point }}"></polygon>
 						    			{% if item.img %}
-						    				<image class="map__logo" xlink:href="{{ item.img }}" />
+						    				<image class="map__logo" xlink:href="{{ item.img }}" width="200" height="100" transform="translate(307 0)" />
 						    			{% endif %}
 					    			</g>
 						    	{% elseif item.path %}
