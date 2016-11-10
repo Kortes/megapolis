@@ -33,6 +33,13 @@ $(document).ready(function() {
 		});
 	}
 
+	if ($(".text__carousel").length > 0) {
+		$(".text__carousel-list").customCarousel({
+			nextSelector: $(".text__carousel-arrow_next"),
+	        prevSelector: $(".text__carousel-arrow_prev")
+		});
+	}
+
 	$(".filter__item").click(function(e){
 		e.preventDefault();
 		var self = $(this);
