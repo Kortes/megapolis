@@ -5,7 +5,7 @@
 	padding-top: 120px;
 
 	&__inner{
-		padding: 70px 25px 40px;
+		padding: 70px 25px 25px;
 		background: @c-light-blue;
 		position: relative;
 		box-shadow: 0 0 50px fade(@c-black, 20%);
@@ -26,6 +26,20 @@
 		line-height: 1.2;
 	}
 
+	&__dev{
+		font-size: 10px;
+		line-height: 1.2;
+		margin-top: 15px;
+
+		a{
+			text-decoration: none;
+
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
 	&__sotial{
 		margin-bottom: 30px;
 		font-size: 0;
@@ -37,9 +51,10 @@
 
 		&-link{
 			display: block;
-			width: 38px;
-			height: 38px;
+			width: 30px;
+			height: 30px;
 			background: url(../images/sotial.png) no-repeat;
+			background-size: 30px auto;
 
 			&_type{
 
@@ -48,19 +63,23 @@
 				}
 
 				&_tw{
-					background-position: center -38px;
+					background-position: center -30px;
 				}
 
 				&_vk{
-					background-position: center -76px;
+					background-position: center -60px;
 				}
 
 				&_ok{
-					background-position: center -114px;
+					background-position: center -90px;
 				}
 
 				&_google{
-					background-position: center -152px;
+					background-position: center -120px;
+				}
+
+				&_instagram{
+					background-position: center -150px;
 				}
 			}
 
