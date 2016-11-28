@@ -1,0 +1,42 @@
+{% set advertisingList = [
+	{"link": "#", "title": "title", "image": "./images/advertising.jpg"},
+	{"link": "#", "title": "title", "image": "./images/advertising.jpg"}
+]%}
+
+{% set news = [
+	{"link": "/news-item.html", "title": "Получи билеты в кино бесплатно", "text": "Киномакс проводит розыгрыш билетов на фильм «Фантастические твари и где они обитают»"},
+	{"link": "/news-item.html", "title": "Торговая площадь в АРЕНДУ", "text": "В аренду сдается торговая площадь под магаз обуви под магаз обуви"},
+	{"link": "/news-item.html", "title": "Получи билеты в кино бесплатно", "text": "Киномакс проводит розыгрыш билетов на фильм «Фантастические твари и где они обитают»"}
+]%}
+
+<div class="news-main">
+	<div class="news-main__news">
+		<div class="news-main__head clearfix">
+			<a href="/news.html" class="news-main__all">Все новости</a>
+			<div class="news-main__title">Новости</div>
+		</div>
+		<ul class="news-main__body">
+			{% for item in news %}
+				<li class="news-main__item">
+					<a href="{{ item.link }}" class="news-main__item-link">{{ item.title }}</a>
+					<div class="news-main__item-text">{{ item.text }}</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="news-main__advertising">
+		{% if advertisingList.length > 1 %}
+			<a href="#" class="news-main__advertising-arrow news-main__advertising-arrow-prev"></a>
+			<a href="#" class="news-main__advertising-arrow news-main__advertising-arrow-next"></a>
+		{% endif %}
+		<ul class="news-main__advertising-list">
+			{% for ad in advertisingList %}
+				<li class="news-main__advertising-item">
+					<a href="{{ ad.link }}" class="news-main__advertising-link">
+						<img src="{{ ad.image }}" alt="{{ ad.title }}" class="news-main__advertising-image" />
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

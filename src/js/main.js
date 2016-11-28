@@ -26,10 +26,10 @@ $(document).ready(function() {
 		});
 	}
 
-	if ($(".stock__advertising").length > 0) {
-		$(".stock__advertising").customCarousel({
-			nextSelector: $(".stock__advertising-arrow-next"),
-	        prevSelector: $(".stock__advertising-arrow-prev")
+	if ($(".news-main__advertising-list").length > 0) {
+		$(".news-main__advertising-list").customCarousel({
+			nextSelector: $(".news-main__advertising-arrow-next"),
+	        prevSelector: $(".news-main__advertising-arrow-prev")
 		});
 	}
 

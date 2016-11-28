@@ -1,29 +1,7 @@
-{% set advertisingList = [
-	{"link": "#", "title": "title", "image": "./images/advertising.jpg"},
-	{"link": "#", "title": "title", "image": "./images/advertising.jpg"}
-]%}
-
 {% if stock.title %}
 	<div class="stock-title">{{ stock.title }}</div>
 {% endif %}
 <ul class="stock {% if stock.type %}stock_{{ stock.type }}{% endif %}">
-	{% if advertising %}
-		<li class="stock__item stock__item_advertising">
-			{% if advertisingList.length > 1 %}
-				<a href="#" class="stock__advertising-arrow stock__advertising-arrow-prev"></a>
-				<a href="#" class="stock__advertising-arrow stock__advertising-arrow-next"></a>
-			{% endif %}
-			<ul class="stock__advertising">
-				{% for ad in advertisingList %}
-					<li class="stock__advertising-item">
-						<a href="{{ ad.link }}" class="stock__advertising-link">
-							<img src="{{ ad.image }}" alt="{{ ad.title }}" class="stock__advertising-image" />
-						</a>
-					</li>
-				{% endfor %}
-			</ul>
-		</li>
-	{% endif %}
 	{% for item in stock.list %}
 		{% if item.end %}
 			<li class="stock__item stock__item_end">
