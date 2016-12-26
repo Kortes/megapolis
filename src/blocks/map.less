@@ -11,7 +11,7 @@
 			opacity: 1;
 			cursor: pointer;
 
-			& + .map__logo{
+			& + .map__logo, & ~ .map__text{
 				display: block;
 			}
 		}
@@ -51,8 +51,12 @@
 		}
 	}
 
-	&__logo{
+	&__logo, &__text{
 		display: none;
+	}
+
+	&__text{
+		font-size: 15px;
 	}
 
 	&__wrapper{

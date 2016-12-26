@@ -399,6 +399,9 @@
 							    		<polygon class="map__shop {% if item.type %}map__shop_type_{{ item.type }}{% endif %}" points="{{ item.point }}"></polygon>
 						    			{% if item.img %}
 						    				<image class="map__logo" xlink:href="{{ item.img }}" width="200" height="100" transform="translate(307 0)" />
+										{% else %}
+											<text class="map__text" x="335" y="11">Помещение свободно.</text>
+											<text class="map__text" x="260" y="27">Кликните чтобы оформить заявку на аренду.</text>
 						    			{% endif %}
 					    			</g>
 						    	{% elseif item.path %}
@@ -406,6 +409,9 @@
 							    		<path d="{{ item.path }}" class="map__shop {% if item.type %}map__shop_type_{{ item.type }}{% endif %}"></path>
 							    		{% if item.img %}
 						    				<image class="map__logo" xlink:href="{{ item.img }}" />
+										{% else %}
+											<text class="map__text" x="335" y="11">Помещение свободно.</text>
+											<text class="map__text" x="260" y="27">Кликните чтобы оформить заявку на аренду.</text>
 						    			{% endif %}
 						    		</g>
 					    		{% elseif item.wall %}
