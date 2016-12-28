@@ -35,12 +35,11 @@
 				{"id": "b002", "type": "jeans", "point": "108 110 210 8 347 145 309 184 359 236 209 387 86 263 174 175"},
 				{"id": "c001", "type": "catering", "point": "479 135 539 75 588 125 529 184"},
 				{"id": "c002", "type": "services", "point": "370 207 380 197 387 208 378 215"},
-				{"id": "c003", "type": "home", "path": "M 347 145 Q 380 115 415 115 L 422 211 L 389 211 Z"},
+				{"id": "c003", "type": "home", "path": "M 347 145 Q 380 115 415 115 448 115 479 135 L 506 161 L454 211 L 389 211 Z"},
 				{"id": "c004", "point": "477 223 487 212 494 218 483 228"},
 				{"id": "c005", "type": "services", "point": "453 245 464 235 470 242 459 252"},
 				{"id": "c006", "type": "services", "point": "388 262 392 254 404 258 400 267"},
 				{"id": "c008", "type": "services", "point": "465 234 476 224 482 230 471 240"},
-				{"id": "c010", "path": "M 415 115 Q 448 115 479 135 L 506 161 L 454 211 L 422 211 Z"},
 				{"id": "c012", "type": "services", "point": "410 259 422 259 422 269 410 269"},
 				{"id": "c014", "type": "services", "point": "342 157 349 152 355 162 348 167"},
 				{"id": "c015", "type": "services", "point": "374 250 380 244 389 251 383 258"},
@@ -268,6 +267,7 @@
 				{"id": "b418", "point": "714 158 739 132 781 173 770 183 743 157 728 172"},
 				{"id": "b420", "type": "game", "point": "575 279 581 273 592 284 586 290"},
 				{"id": "b421", "type": "game", "point": "562 266 568 260 579 271 573 278"},
+				{"id": "b421", "type": "game", "point": "610 273 628 255 635 261 617 279"},
 				{"id": "c401", "type": "child", "path": "M 347 160 Q 375 123 406 123 L 406 162 L 348 162 Z"},
 				{"id": "c402", "type": "accessories", "point": "318 235 325 229 334 237 327 244"},
 				{"id": "c403", "type": "beauty", "path": "M 406 123 Q 437 123 467 160 L 465 161 L 406 162 Z"},
@@ -400,8 +400,9 @@
 						    			{% if item.img %}
 						    				<image class="map__logo" xlink:href="{{ item.img }}" width="200" height="100" transform="translate(307 0)" />
 										{% else %}
-											<text class="map__text" x="335" y="11">Помещение свободно.</text>
-											<text class="map__text" x="260" y="27">Кликните чтобы оформить заявку на аренду.</text>
+											<foreignObject class="map__text" x="280" y="25" width="260" height="100">
+												<span xmlns="http://www.w3.org/1999/xhtml">Помещение 111 свободно, кликните чтобы оформить заявку на аренду</span>
+											</foreignObject>
 						    			{% endif %}
 					    			</g>
 						    	{% elseif item.path %}
@@ -410,8 +411,9 @@
 							    		{% if item.img %}
 						    				<image class="map__logo" xlink:href="{{ item.img }}" />
 										{% else %}
-											<text class="map__text" x="335" y="11">Помещение свободно.</text>
-											<text class="map__text" x="260" y="27">Кликните чтобы оформить заявку на аренду.</text>
+											<foreignObject class="map__text" x="280" y="25" width="260" height="100">
+												<span xmlns="http://www.w3.org/1999/xhtml">Помещение 111 свободно, кликните чтобы оформить заявку на аренду</span>
+											</foreignObject>
 						    			{% endif %}
 						    		</g>
 					    		{% elseif item.wall %}
