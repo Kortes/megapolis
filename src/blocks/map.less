@@ -3,13 +3,13 @@
 .map{
 	&__shop{
 		stroke: @c-text;
-		stroke-width: 2px;
-		opacity: 0.3;
+		stroke-width: 1.5px;
 		fill: @c-white;
+		fill-opacity: 0.3;
 
 		&:hover{
-			opacity: 1;
 			cursor: pointer;
+			fill-opacity: 1;
 
 			& + .map__logo, & ~ .map__text{
 				display: block;
@@ -24,7 +24,7 @@
 
 	&__wall{
 		stroke: @c-text;
-		stroke-width: 2px;
+		stroke-width: 3px;
 		fill: #fff;
 	}
 
