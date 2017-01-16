@@ -91,8 +91,8 @@
 				{"id": "b132", "type": "services", "point": "534 317 576 274 593 292 551 333"},
 				{"id": "c101", "type": "electronic", "point": "390 200 440 200 440 225 390 225", "img": "./images/euroset.jpg"},
 				{"id": "c102", "type": "catering", "point": "338 213 361 191 381 191 381 244 377 244", "img": "./images/coffeeshop.jpg"},
-				{"id": "c103", "type": "electronic", "path": "M 415 167 Q 448 167 469 191 L 415 191 Z"},
-				{"id": "c104", "type": "electronic", "path": "M 361 191 Q 380 167 415 167 L 415 191 Z"},
+				{"id": "c103", "type": "electronic", "path": "M 425 163 Q 460 164 485 186 L 425 186 Z"},
+				{"id": "c104", "type": "electronic", "path": "M 366 186 Q 380 167 425 163 L 425 186 Z"},
 				{"id": "c106", "type": "services", "point": "483 164 490 157 515 182 508 189"},
 				{"id": "c108", "type": "gifts", "point": "430 237 440 237 440 246 430 246"},
 				{"id": "c109", "type": "catering", "point": "322 244 331 235 351 257 343 266"},
@@ -398,7 +398,10 @@
 						    		<g class="map__group">
 							    		<polygon class="map__shop {% if item.type %}map__shop_type_{{ item.type }}{% endif %}" points="{{ item.point }}"></polygon>
 						    			{% if item.img %}
-						    				<image class="map__logo" xlink:href="{{ item.img }}" width="200" height="100" transform="translate(307 0)" />
+						    				<image class="map__logo" xlink:href="{{ item.img }}" width="200" height="90" transform="translate(307 0)" />
+											<foreignObject class="map__text map__text_title" x="280" y="89" width="260" height="25">
+												<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }}</span>
+											</foreignObject>
 										{% else %}
 											<foreignObject class="map__text" x="280" y="25" width="260" height="100">
 												<span xmlns="http://www.w3.org/1999/xhtml">Помещение 111 свободно, кликните чтобы оформить заявку на аренду</span>
