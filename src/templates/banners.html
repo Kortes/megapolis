@@ -1,0 +1,13 @@
+{% set banner = [
+	{"link": "#", "image": "./images/banner1.png"}
+]%}
+
+<ul class="banners">
+	{% for item in banner -%}
+		<li class="banners__item">
+			<a href="{{ item.link }}" class="banners__link" >
+				<img src="{{ item.image }}" class="banners__image" alt="" />
+			</a>
+		</li>
+	{%- endfor %}
+</ul>

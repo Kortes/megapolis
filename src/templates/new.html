@@ -1,0 +1,23 @@
+{% set new = {
+	"text": "новые арендаторы",
+	"link": "#",
+	"list" :[
+		{"link": "#", "image": "./images/shop1.jpg", "title": "title1"},
+		{"link": "#", "image": "./images/shop2.jpg", "title": "title2"},
+		{"link": "#", "image": "./images/shop3.jpg", "title": "title3"},
+		{"link": "#", "image": "./images/shop4.jpg", "title": "title4"},
+		{"link": "#", "image": "./images/shop1.jpg", "title": "title5"}
+	]
+}%}
+
+<div class="new">
+	<a href="{{ new.link }}" class="new__more">{{ new.text }}</a><ul class="new__list">
+		{% for item in new.list -%}
+			<li class="new__item">
+				<a href="{{ item.link }}" class="new__link">
+					<img src="{{ item.image }}" alt="{{ item.title }}" class="new__image" />
+				</a>
+			</li>
+		{%- endfor %}
+	</ul>
+</div>

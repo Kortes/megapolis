@@ -1,0 +1,44 @@
+@import "var";
+
+.promo{
+	position: relative;
+	font-weight: 700;
+	font-size: 56px;
+
+	&:hover{
+		.promo__text{
+			text-decoration: none;
+		}
+	}
+
+	&__image{
+		width: 790px;
+		height: auto;
+		display: block;
+
+		&_night{
+			display: none;
+		}
+	}
+
+	&__text{
+		position: absolute;
+		top: 40px;
+		left: 40px;
+		right: 40px;
+		text-align: center;
+		text-decoration: underline;
+	}
+
+	&_night{
+		color: @c-white;
+		
+		.promo__image{
+			display: none;
+
+			&_night{
+				display: block;
+			}
+		}
+	}
+}

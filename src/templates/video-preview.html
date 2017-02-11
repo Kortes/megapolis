@@ -1,0 +1,24 @@
+{% set video = [
+	{"link": "#", "image": "./images/video-preview.jpg"},
+	{"link": "#", "image": "./images/video-preview.jpg"},
+	{"link": "#", "image": "./images/video-preview.jpg"},
+	{"link": "#", "image": "./images/video-preview.jpg"},
+	{"link": "#", "image": "./images/video-preview.jpg"}
+]%}
+
+<div class="video-preview">
+	<ul class="video-preview__list">
+		{% for item in video -%}
+			<li class="video-preview__item">
+				<a href="{{ item.link }}" class="video-preview__link">
+					<img src="{{ item.image }}" alt="" class="video-preview__image" />
+				</a>
+			</li>
+		{%- endfor %}
+	</ul>
+	<ul class="video-preview__controls">
+		{% for item in video -%}
+			<li class="video-preview__point {% if loop.first %}video-preview__point_active{% endif %}"></li>
+		{%- endfor %}
+	</ul>
+</div>

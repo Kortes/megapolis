@@ -1,0 +1,178 @@
+@import "var";
+
+.news{
+	padding: 0 10px 70px;
+
+	&__item{
+		display: block;
+		text-decoration: none;
+		color: @c-text;
+		margin-bottom: 35px;
+
+		&:hover{
+			.news__title{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__body{
+		overflow: hidden;
+		display: block;
+	}
+
+	&__image{
+		display: block;
+		float:left;
+		margin-right: 20px;
+		max-width: 210px;
+		max-height: 210px;
+	}
+
+	&__img{
+		width: auto;
+		height: auto;
+		max-height: 210px;
+		max-width: 210px;
+		vertical-align: top;
+	}
+
+	&__title{
+		display: block;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 26px;
+		margin-bottom: 5px;
+		color: @c-link;
+	}
+
+	&__text{
+		display: block;
+	}
+
+	&__date{
+		display: block;
+		font-size: 12px;
+		color: @c-dark;
+		margin-top: 15px;
+	}
+
+	&__bottom{
+		text-align: center;
+		margin-top: 50px;
+	}
+
+	&__more{
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 30px;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:hover{
+			text-decoration: underline;
+		}
+
+		&:before{
+			content: "";
+			display: inline-block;
+			vertical-align: top;
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+			background: @c-link url(../images/arrow.png) no-repeat center top;
+			border-radius: 50%;
+		}
+	}
+
+	&__link{
+		font-size: 18px;
+		font-weight: 600;
+		display: inline-block;
+		margin-top: 20px;
+	}
+
+	&-main{
+		height: 267px;
+		margin-bottom: 10px;
+		display: flex;
+
+		&__news, &__articles{
+			width: 356px;
+			flex: 0 0 369px;
+			background: @c-white;
+			border-radius: 5px;
+			box-shadow: 1px 2px 4px fade(@c-black, 20%);
+		}
+
+		&__articles{
+			width: 384px;
+			margin-left: 10px;
+			background: url(../images/news_bg.jpg) no-repeat;
+
+			&__head, &__body{
+				padding-left: 85px !important;
+				border-bottom: none !important;
+			}
+
+			&__body{
+				height: 150px;
+			}
+		}
+
+		&__head{
+			padding: 10px 20px 0;
+			border-bottom: 1px solid @c-border;
+			line-height: 35px;
+		}
+
+		&__body{
+			padding: 0 20px;
+			overflow: hidden;
+		}
+
+		&__item{
+			margin: 15px 0;
+			overflow: hidden;
+
+			&-link{
+				font-size: 17px;
+				line-height: 19px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+
+			&-text{
+				font-size: 13px;
+				line-height: 17px;
+				overflow: hidden;
+				max-height: 34px;
+			}
+		}
+
+		&__link{
+			display: block;
+			padding-left: 85px;
+			font-size: 35px;
+			text-decoration: none;
+			line-height: 29px;
+			font-weight: 600;
+		}
+
+		&__all{
+			float:right;
+			width: 80px;
+			text-align: right;
+			font-size: 13px;
+			font-weight: 200;
+		}
+
+		&__title{
+			text-transform: uppercase;
+			color: @c-link;
+			font-weight: 600;
+			font-size: 17px;
+		}
+	}
+}

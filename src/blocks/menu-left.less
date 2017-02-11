@@ -1,0 +1,30 @@
+@import "var";
+
+.menu-left{
+	background: @c-yellow;
+	margin-bottom: 35px;
+
+	&__item{
+		display: block;
+	}
+
+	&__link{
+		display: block;
+		padding: 12px 25px 8px;
+		line-height: 25px;
+		border-top: 1px solid @c-yellow-light;
+		border-bottom: 1px solid @c-yellow-dark;
+		text-decoration: none !important;
+		color: @c-text;
+		font-size: 13px;
+		font-weight: 600;
+		text-transform: uppercase;
+
+		&:hover,
+		&_active{
+			background: @c-dark;
+			color: @c-white;
+			border-color: @c-dark;
+		}
+	}
+}

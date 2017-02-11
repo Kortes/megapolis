@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% set pageTitle = "Координаты" %}
+
+{% set breadcrumbs = [
+	{"link": "/", "title": "Главная"}
+]%}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block top %}
+	<div class="page__title filter">
+		<div>
+			<h1>{{ pageTitle }}</h1>
+		</div>
+	</div>
+	{% include 'breadcrumbs.html' %}
+{% endblock %}
+
+{% block content %}
+	<div class="text">
+		<div class="text__block">
+			<div class="contact">
+				<div class="contact__top">
+					Справочная служба:
+					<div class="contact__phone">(343) 385-1000</div>
+				</div>
+				<div class="contact__bottom">
+					<div class="contact__cell">
+						<div class="contact__title">Мы<br>находимся:</div>
+						<div class="contact__text">Россия, г.Екатеринбург, ул.8&nbsp;Марта, 149</div>
+					</div>
+					<div class="contact__cell">
+						<div class="contact__title">Режим<br>работы:</div>
+						<div class="contact__text">пн – вс<br>с 10:00 до 22:00</div>
+					</div>
+					<div class="contact__cell">
+						<div class="contact__title">Корпоративная<br>почта:</div>
+						<div class="contact__text">
+							<a href="mailto:info@megapolis66.ru" class="contact__mail">info@megapolis66.ru</a><br>
+							<a href="#" class="btn">Написать нам письмо</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="contact__map" id="map"></div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block script %}
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,72 @@
+@import "var";
+
+.info{
+	background: @c-light-blue;
+	padding: 25px;
+
+	&__item{
+		display: block;
+		border-bottom: 1px dotted @c-blue;
+		line-height: 32px;
+		font-size: 15px;
+		padding: 3px 0 0 35px;
+		position: relative;
+		font-weight: 600;
+
+		&:last-child{
+			border-bottom: none;
+		}
+
+		&:before{
+			content: "";
+			position: absolute;
+			top: 5px;
+			left: 0;
+			width: 26px;
+			height: 26px;
+			background: url(../images/info.png) no-repeat;
+		}
+
+		&_type{
+			&_date:before{
+				background-position: center 0;
+			}
+
+			&_time:before{
+				background-position: center -26px;
+			}
+
+			&_temperature:before{
+				background-position: center -52px;
+			}
+
+			&_rates:before{
+				background-position: center -78px;
+			}
+		}
+	}
+
+	&__rates{
+		font-size: 0;
+
+		&-item{
+			font-size: 15px;
+			line-height: 18px;
+			display: inline-block;
+			vertical-align: middle;
+			padding-right: 8px;
+			border-right: 1px solid @c-border;
+			margin-right: 8px;
+
+			&:last-child{
+				padding: 0;
+				margin: 0;
+				border: none;
+			}
+		}
+
+		&-symbol{
+			font-weight: 400;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+{% set articles = [
+	{"link": "/news-item.html", "title": "Получи билеты в кино бесплатно", "text": "Киномакс проводит розыгрыш билетов на фильм «Фантастические твари и где они обитают»"},
+	{"link": "/news-item.html", "title": "Торговая площадь в АРЕНДУ", "text": "В аренду сдается торговая площадь под магаз обуви под магаз обуви"},
+	{"link": "/news-item.html", "title": "Получи билеты в кино бесплатно", "text": "Киномакс проводит розыгрыш билетов на фильм «Фантастические твари и где они обитают»"}
+]%}
+
+{% set news = [
+	{"link": "/news-item.html", "title": "Получи билеты в кино бесплатно", "text": "Киномакс проводит розыгрыш билетов на фильм «Фантастические твари и где они обитают»"},
+	{"link": "/news-item.html", "title": "Торговая площадь в АРЕНДУ", "text": "В аренду сдается торговая площадь под магаз обуви под магаз обуви"},
+	{"link": "/news-item.html", "title": "Получи билеты в кино бесплатно", "text": "Киномакс проводит розыгрыш билетов на фильм «Фантастические твари и где они обитают»"}
+]%}
+
+<div class="news-main">
+	<div class="news-main__news">
+		<div class="news-main__head clearfix">
+			<a href="/news.html" class="news-main__all">Все новости</a>
+			<div class="news-main__title">Новости</div>
+		</div>
+		<ul class="news-main__body">
+			{% for item in news %}
+				<li class="news-main__item">
+					<a href="{{ item.link }}" class="news-main__item-link">{{ item.title }}</a>
+					<div class="news-main__item-text">{{ item.text }}</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="news-main__articles">
+		<div class="news-main__head news-main__articles__head clearfix">
+			<a href="/news.html" class="news-main__all">Все статьи</a>
+			<div class="news-main__title">Статьи</div>
+		</div>
+		<ul class="news-main__body news-main__articles__body">
+			{% for article in articles %}
+			<li class="news-main__item">
+				<a href="{{ article.link }}" class="news-main__item-link">{{ article.title }}</a>
+				<div class="news-main__item-text">{{ article.text }}</div>
+			</li>
+			{% endfor %}
+		</ul>
+
+		<a href="/news.html" class="news-main__link">блог <br>МегапоЛИСа</a>
+	</div>
+</div>

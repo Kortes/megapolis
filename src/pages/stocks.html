@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% set pageTitle = "Акции" %}
+
+{% set breadcrumbs = [
+	{"link": "/", "title": "Главная"}
+]%}
+
+{% set stock = {
+	"type": "border",
+	"more": true,
+	"list":[
+		{"link": "#", "image": "./images/stock1.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 июля", "discount": "50%"},
+		{"link": "#", "image": "./images/stock2.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 августа", "discount": "20%", "color": "orange"},
+		{"link": "#", "image": "./images/stock3.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 сентября", "discount": "15%", "color": "green"},
+		{"link": "#", "image": "./images/stock4.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 октября", "discount": "35%", "color": "blue"},
+		{"link": "#", "image": "./images/stock1.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 ноября", "discount": "15%", "color": "green"},
+		{"link": "#", "image": "./images/stock2.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 декабря", "discount": "30%", "color": "blue"},
+		{"end": true, "text": "второй <div class='stock__title'>розыгрыш iphone 6s</div> состоялся!"},
+		{"link": "#", "image": "./images/stock4.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 января", "discount": "10%", "color": "orange"},
+		{"link": "#", "image": "./images/stock1.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 июля", "discount": "50%"},
+		{"link": "#", "image": "./images/stock2.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 августа", "discount": "20%", "color": "orange"},
+		{"link": "#", "image": "./images/stock3.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 сентября", "discount": "15%", "color": "green"},
+		{"link": "#", "image": "./images/stock4.jpg", "text": "Cовместный конкурс  Accessorize и  туроператора TUI", "date": "30 октября", "discount": "35%", "color": "blue"}
+	]
+}%}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block top %}
+	<div class="page__title">
+		<h1>{{ pageTitle }}</h1>
+	</div>
+	{% include 'breadcrumbs.html' %}
+{% endblock %}
+
+{% block content %}
+	{% include 'stock.html' %}
+{% endblock %}

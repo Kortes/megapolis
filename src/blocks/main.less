@@ -1,0 +1,195 @@
+@import "var";
+
+html, body{
+	height: 100%;
+}
+
+.page{
+    -webkit-font-smoothing: antialiased;
+    font: 14px/1.5 'Helios', Arial, sans-serif;
+    font-weight: 200;
+    color: @c-text;
+    background: @c-bg url(../images/bg.jpg) center;
+
+    &__inner{
+        display: flex;
+        min-height: 100%;
+    }
+
+    &__aside{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 0 10px fade(@c-black, 30%);
+        background: fade(@c-white, 65%);
+
+        & > div{
+            width: 210px;
+        }
+    }
+
+    &__main{
+        flex: 1 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__content{
+        padding: 20px;
+        background: @c-white;
+        flex: 1 auto;
+    }
+
+    &__title{
+        background: fade(@c-link, 65%);
+
+        h1{
+            margin-bottom: 0;
+            line-height: 32px;
+            padding: 23px 30px 20px;
+            color: @c-white;
+            font-size: 30px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    &_home{
+        .page__content{
+            background: none;
+        }
+
+        .footer__inner:before{
+            display: none;
+        }
+    }
+}
+
+.aside{
+    &__reference{
+        margin: 15px 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px dotted @c-text;
+
+        &:last-child{
+            border: none;
+        }
+
+        &-title{
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        &-phone{
+            font-size: 20px;
+            font-weight: 200;
+        }
+
+        &-text{
+            font-size: 16px;
+            font-weight: 200;
+            line-height: 21px;
+        }
+    }
+
+    &__schema{
+        margin-top: 20px;
+        display: inline-block;
+        padding-left: 37px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 40px;
+        background: url(../images/schema.png) no-repeat left top;
+    }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 0.6em;
+}
+
+p{
+    margin-bottom: 1.5em;
+}
+
+.btn{
+    background: @c-input;
+    border: none;
+    border-radius: 4px;
+    font: 16px/28px 'Helios', Arial, sans-serif;
+    font-weight: 600;
+    color: @c-link;
+    padding: 2px 15px 0;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none !important;
+}
+
+.hide{
+    display: none;
+}
+
+.container{
+    width: 1000px;
+    min-width: 1000px;
+    margin: 0 auto;
+}
+
+a{
+    color: @c-link;
+    text-decoration: underline;
+
+    &:hover{
+        text-decoration: none;
+    }
+
+    &[href$="doc"],
+    &[href$="docx"],
+    &.rent-link{
+        display: inline-block;
+        padding: 15px 10px 5px 80px;
+        position: relative;
+        font-weight: 500;
+        line-height: 18px;
+        text-decoration: none;
+        background-image: url(../images/doc.png);
+        background-repeat: no-repeat;
+        background-position: 20px 15px;
+
+        & > span{
+            text-decoration: underline;
+        }
+
+        &:hover{
+            & > span{
+                text-decoration: none;
+            }
+        }
+
+        &:after{
+            content: attr(data-size);
+            display: block;
+            font-weight: 400;
+            font-size: 12px;
+            color: @c-dark;
+        }
+    }
+}
+
+.clearfix:before,
+.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+.clearfix {
+    zoom:1; /* Хак для IE 6 и 7 */
+}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% set pageTitle = "Развлечения" %}
+
+{% set breadcrumbs = [
+	{"link": "/", "title": "Главная"}
+]%}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block top %}
+	<div class="page__title">
+		<div>
+			<h1>{{ pageTitle }}</h1>
+		</div>
+	</div>
+	{% include 'breadcrumbs.html' %}
+{% endblock %}
+
+{% block content %}
+	<div class="text">
+		<div class="text__block">
+			{% include 'film.html' %}
+			{% include 'over-film.html' %}
+		</div>
+	</div>
+{% endblock %}

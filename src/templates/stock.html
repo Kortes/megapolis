@@ -1,0 +1,33 @@
+{% if stock.title %}
+	<div class="stock-title">{{ stock.title }}</div>
+{% endif %}
+<ul class="stock {% if stock.type %}stock_{{ stock.type }}{% endif %}">
+	{% for item in stock.list %}
+		{% if item.end %}
+			<li class="stock__item stock__item_end">
+				<div class="stock__text">{{ item.text }}</div>
+			</li>
+		{% else %}
+			<li class="stock__item">
+				<a href="{{ item.link }}" class="stock__link">
+					<span class="stock__image">
+						<img src="{{ item.image}}" alt="{{ item.text }}" class="stock__img"/>
+					</span>
+					<span class="stock__discription">{{ item.text }}</span>
+					<span class="stock__bottom">
+						<span class="stock__date">до {{ item.date }}</span>
+						<span class="stock__discount {% if item.color %}stock__discount_color_{{ item.color }}{% endif %}">
+							<span class="stock__percent">-{{ item.discount }}</span>
+						</span>
+					</span>
+				</a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+
+{% if stock.more %}
+	<div class="stock-more">
+		<a href="#" class="stock-more__link"><span class="stock-more__icon"></span> Показать еще</a>
+	</div>
+{% endif %}

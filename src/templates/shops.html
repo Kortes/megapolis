@@ -1,0 +1,24 @@
+<ul class="shops">
+	{% for item in shops %}
+		<li class="shops__letter">{{ item.letter }}</li>
+		{% for shop in item.list %}
+			<li class="shops__item">
+				<a href="{{ shop.link }}" class="shops__link">
+					<span class="shops__image">
+						<img src="{{ shop.image }}" alt="{{ shop.title }}" class="shops__img" />
+					</span>
+					<span class="shops__main">
+						<span class="shops__title">{{ shop.title }}</span>
+						<span class="shops__text">
+							{{ shop.section }}<br>
+							{{ shop.position }}
+						</span>
+					</span>
+				</a>
+			</li>
+		{% endfor %}
+	{% endfor %}
+</ul>
+<div class="stock-more">
+	<a href="#" class="stock-more__link"><span class="stock-more__icon"></span> Показать еще</a>
+</div>

@@ -1,0 +1,48 @@
+@import "var";
+
+.gallery{
+	&__big{
+		margin-bottom: 15px;
+
+		&-link{
+			display: block;
+		}
+
+		&-img{
+			vertical-align: middle;
+			max-width: 100%;
+			width: auto;
+			height: auto;
+		}
+
+		&-item{
+			display: none;
+
+			&_active{
+				display: block;
+			}
+		}
+	}
+
+	&__preview{
+		margin: 0 -7px 30px;
+
+		&-link{
+			display: block;
+		}
+
+		&-img{
+			vertical-align: top;
+			max-width: 100%;
+			width: auto;
+			height: auto;
+		}
+
+		&-item{
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 7px 15px;
+			width: 110px;
+		}
+	}
+}
