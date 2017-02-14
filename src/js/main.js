@@ -141,65 +141,24 @@ $(document).ready(function() {
 	});
 
 	$('.map__group').mouseover(function(e){
-		var id = event.target.id;
+		var id = e.target.id;
 		$('[data-id="'+ id +'"]').css('display', 'block');
-		 $('[data-id="'+ id +'"]').css('border', '1px solid #ccc');
-// console.log(id);
-
-		
+		 
 	})
-	 .mouseleave(function () {
-	 	var id = event.target.id;
-                       $('[data-id="'+ id +'"]').css('display', 'none');
-                    })
-                    .mousemove(function(e) {
-                    	var id = event.target.id;
-                        var mouseX = e.pageX, //X coordinates of mouse
-                                mouseY = e.pageY; //Y coordinates of mouse
+	 .mouseleave(function (e) {
+	 	var id = e.target.id;
+        $('[data-id="'+ id +'"]').css('display', 'none');
+    })
+    	.mousemove(function(e) {
+            var id = e.target.id;
+            var mouseX = e.pageX, //X coordinates of mouse
+            mouseY = e.pageY; //Y coordinates of mouse
 
-                         $('[data-id="'+ id +'"]').css({
-                            top: mouseY-60,
-                            left: mouseX - ($('[data-id="'+ id +'"]').width()/2)
-                        });
-                    });
-
-
-					var bigMag = [
-						{"code":"б304", "transX": "903px",  "transY": "198px",  "rotate": "31deg",  "skew": "-13deg"},
-						{"code":"a301", "transX": "277px",  "transY": "319px",  "rotate": "-33deg",  "skew": "9deg"},
-						{"code":"a400", "transX": "194px",  "transY": "280px",  "rotate": "-30deg",  "skew": "18deg", "w": "190px"},
-						{"code":"b400", "transX": "892px",  "transY": "214px",  "rotate": "32deg",  "skew": "-15deg", "w":"150px"},
-						{"code":"b410", "transX": "896px",  "transY": "105px",  "rotate": "31deg",  "skew": "-19deg"},
-						{"code":"a100", "transX": "188px",  "transY": "244px",  "rotate": "-31deg",  "skew": "14deg", "w":"160px"},
-						{"code":"b117", "transX": "1080px",  "transY": "208px",  "rotate": "30deg",  "skew": "-16deg", "w":"130px"},
-						{"code":"b200", "transX": "910px",  "transY": "208px",  "rotate": "30deg",  "skew": "-16deg", "w":"160px"},
-						{"code":"a500", "transX": "779px",  "transY": "260px",  "rotate": "33deg",  "skew": "-20deg", "w":"120px"},
-						{"code":"b002", "transX": "260px",  "transY": "230px",  "rotate": "0deg",  "skew": "0deg", "w":"140px"},
-						{"code":"c024", "transX": "55px",  "transY": "285px",  "rotate": "-31deg",  "skew": "13deg", "w":"130px"},
-						{"code":"c003", "transX": "577px",  "transY": "220px",  "rotate": "0deg",  "skew": "0deg", "w":"100px"},
-						{"code":"c001", "transX": "730px",  "transY": "231px",  "rotate": "-45deg",  "skew": "15deg", "w":"100px"}
-					
-					];
-
-						
-					 // jQuery.each(bigMag, function() {
-					 // 	console.log($(this));
-					 // 	console.log($('[data-code="'+  value['code']  +'"]'));
-      // 					$('[data-code="'+ bigMag.code +'"]').css({"-webkit-transform":"translate("+bigMag.transX+","+bigMag.transY+")"});
-      					
-     	// 			});
-
-					 $.each(bigMag, function(index,value) {
-					    console.log($('[data-code="'+  value['code']  +'"]'));
-					    $('[data-code="'+ value['code'] +'"]').css({"-webkit-transform":"translate("+value['transX']+","+value['transY']+") rotate("+value['rotate']+") skew("+value['skew']+")", "width": value['w']});
-
-					  });
-
-                  
-                    	
-                    
-
-                
+            $('[data-id="'+ id +'"]').css({
+                top: mouseY-60,
+                left: mouseX - ($('[data-id="'+ id +'"]').width()/2)
+            });
+     	});      
 
 });
 
