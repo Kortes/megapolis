@@ -139,4 +139,26 @@ $(document).ready(function() {
 		self.closest(".map__preview").addClass("map__preview_active");
 		$(".map__floor_" + index).fadeIn(200)
 	});
+
+	$('.map__group').mouseover(function(e){
+		var id = e.target.id;
+		$('[data-id="'+ id +'"]').css('display', 'block');
+		 
+	})
+	 .mouseleave(function (e) {
+	 	var id = e.target.id;
+        $('[data-id="'+ id +'"]').css('display', 'none');
+    })
+    	.mousemove(function(e) {
+            var id = e.target.id;
+            var mouseX = e.pageX, //X coordinates of mouse
+            mouseY = e.pageY; //Y coordinates of mouse
+
+            $('[data-id="'+ id +'"]').css({
+                top: mouseY-60,
+                left: mouseX - ($('[data-id="'+ id +'"]').width()/2)
+            });
+     	});      
+
 });
+
