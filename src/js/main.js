@@ -143,22 +143,22 @@ $(document).ready(function() {
 	$('.map__group').mouseover(function(e){
 		var id = e.target.id;
 		$('[data-id="'+ id +'"]').css('display', 'block');
-		 
 	})
-	 .mouseleave(function (e) {
-	 	var id = e.target.id;
-        $('[data-id="'+ id +'"]').css('display', 'none');
-    })
-    	.mousemove(function(e) {
-            var id = e.target.id;
-            var mouseX = e.pageX, //X coordinates of mouse
-            mouseY = e.pageY; //Y coordinates of mouse
+		.mouseleave(function(e){
+			var id = e.target.id;
+			$('[data-id="'+ id +'"]').css('display', 'none');
+		})
+		.mousemove(function(e){
+			var id = e.target.id,
+				img = $('[data-id="'+ id +'"]'),
+				mouseX = e.pageX, //X coordinates of mouse
+				mouseY = e.pageY; //Y coordinates of mouse
 
-            $('[data-id="'+ id +'"]').css({
-                top: mouseY-60,
-                left: mouseX - ($('[data-id="'+ id +'"]').width()/2)
-            });
-     	});      
+			img.css({
+				top: mouseY - img.height() - 10,
+				left: mouseX - (img.width() / 2)
+			});
+		});
 
 });
 
