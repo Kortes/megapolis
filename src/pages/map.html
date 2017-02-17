@@ -428,17 +428,22 @@
 						    
 						    		<g class="map__group">
 							    		<polygon id="{{ item.id }}" class="map__shop {% if item.type %}map__shop_type_{{ item.type }}{% endif %}" points="{{ item.point }}"></polygon>
+							    		
 						    			{% if item.imageBigShop %}
 						    				
-
 						    			<image class="map__logoBigShop" xlink:href="{{ item.imageBigShop }}" width="{{ item.w }}" height="60" data-code="{{ item.id }}" transform = "translate({{ item.transX }}, {{ item.transY }}) rotate( {{ item.rotate }}) skewX({{ item.skew }})" />
-											
+										<foreignObject class="map__text map__text_title" x="280" y="89" width="260" height="25" transform="translate(207 0)">
+											<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }}</span>
+										</foreignObject>
 										{% elseif not item.imageBigShop and not item.img %}
 						    		
 											<foreignObject class="map__text" x="280" y="25" width="260" height="100" transform="translate(207 0)">
 												<span xmlns="http://www.w3.org/1999/xhtml">Помещение {{ item.id }} свободно, кликните чтобы оформить заявку на аренду</span>
 											</foreignObject>
-						    			
+						    			{% else %}
+						    				<foreignObject class="map__text map__text_title" x="280" y="89" width="260" height="25" transform="translate(207 0)">
+												<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }}</span>
+											</foreignObject>
 						    			{% endif %}
 
 					    			</g>
@@ -447,9 +452,16 @@
 							    		<path id="{{ item.id }}" d="{{ item.path }}"  class="map__shop {% if item.type %}map__shop_type_{{ item.type }}{% endif %}"></path>
 							    		{% if item.imageBigShop %}
 						    				<image class="map__logoBigShop" xlink:href="{{ item.imageBigShop }}" width="{{ item.w }}" height="60"  data-code="{{ item.id }}" transform = "translate({{ item.transX }}, {{ item.transY }}) rotate( {{ item.rotate }}) skewX({{ item.skew }})" />
+											<foreignObject class="map__text map__text_title" x="280" y="89" width="260" height="25" transform="translate(207 0)">
+												<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }}</span>
+											</foreignObject>
 										{% elseif not item.imageBigShop and not item.img %}
 											<foreignObject class="map__text" x="280" y="25" width="260" height="100" transform="translate(207 0)">
 												<span xmlns="http://www.w3.org/1999/xhtml">Помещение {{ item.id }} свободно, кликните чтобы оформить заявку на аренду</span>
+											</foreignObject>
+										{% else %}
+						    				<foreignObject class="map__text map__text_title" x="280" y="89" width="260" height="25" transform="translate(207 0)">
+												<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }}</span>
 											</foreignObject>
 						    			{% endif %}
 						    		</g>
