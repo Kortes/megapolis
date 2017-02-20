@@ -208,7 +208,7 @@
 
 				{"id": "a306", "type": "sport", "point": "368.375,156.888 408.875,126.388 427.875,143.888 382.375,173.888", "img": "./images/ekip.gif"},
 				{"id": "a304", "type": "outerwear", "point": "385.875,176.388 427.875,143.888 451.375,163.388 406.375,195.888"},
-				{"id": "a302", "type": "outerwear", "point": "462.375,249.721 508.375,213.388 467.375,177.055 423.708,210.721", "img": "./images/chernyi-brilliant.gif"},
+				{"id": "a302", "type": "outerwear", "point": "462.375,249.721 508.375,213.388 467.375,177.055 423.708,210.721", "img": "./images/ekip.gif", "name": "Черный бриллиант"},
 				{"id": "c314", "type": "accessories", "point": "500.375,257.054 510.041,266.054 538.375,244.388 528.041,232.388"},
 				{"id": "c307", "type": "jewelry", "point": "503.042,294.555 514.708,288.721 528.042,301.388 520.042,309.221", "img": "./images/dostupnaya-roskosh.gif"},
 				{"id": "c321", "type": "jewelry", "point": "527.542,313.221 535.042,306.055 556.042,317.888 551.875,326.721","img": "./images/1.gif"},
@@ -334,7 +334,6 @@
 				{"id": "b525", "type": "shoes", "point": "461.875,327.221 479.202,308.03 473.766,297.749 449.541,315.721 458.041,325.888"},
 				{"id": "b503", "type": "shoes", "point": "366.875,156.888 409.375,126.388 495.375,191.888 444.875,224.388 366.875,156.888"}
 
-
 			]
 		}
 	]
@@ -433,7 +432,7 @@
 						    				
 						    			<image class="map__logoBigShop" xlink:href="{{ item.imageBigShop }}" width="{{ item.w }}" height="60" data-code="{{ item.id }}" transform = "translate({{ item.transX }}, {{ item.transY }}) rotate( {{ item.rotate }}) skewX({{ item.skew }})" />
 										<foreignObject class="map__text map__text_title" x="280" y="89" width="260" height="25" transform="translate(207 0)">
-											<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }}</span>
+											<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }} <br> {{ item.name }}</span>
 										</foreignObject>
 										{% elseif not item.imageBigShop and not item.img %}
 						    		
@@ -441,8 +440,8 @@
 												<span xmlns="http://www.w3.org/1999/xhtml">Помещение {{ item.id }} свободно, кликните чтобы оформить заявку на аренду</span>
 											</foreignObject>
 						    			{% else %}
-						    				<foreignObject class="map__text map__text_title" x="280" y="89" width="260" height="25" transform="translate(207 0)">
-												<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }}</span>
+						    				<foreignObject class="map__text map__text_title" x="280" y="89" width="280" height="55" transform="translate(207 0)">
+												<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }} <br> {{ item.name }}</span>
 											</foreignObject>
 						    			{% endif %}
 
@@ -453,7 +452,7 @@
 							    		{% if item.imageBigShop %}
 						    				<image class="map__logoBigShop" xlink:href="{{ item.imageBigShop }}" width="{{ item.w }}" height="60"  data-code="{{ item.id }}" transform = "translate({{ item.transX }}, {{ item.transY }}) rotate( {{ item.rotate }}) skewX({{ item.skew }})" />
 											<foreignObject class="map__text map__text_title" x="280" y="89" width="260" height="25" transform="translate(207 0)">
-												<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }}</span>
+												<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }} <br> {{ item.name }}</span>
 											</foreignObject>
 										{% elseif not item.imageBigShop and not item.img %}
 											<foreignObject class="map__text" x="280" y="25" width="260" height="100" transform="translate(207 0)">
@@ -461,7 +460,7 @@
 											</foreignObject>
 										{% else %}
 						    				<foreignObject class="map__text map__text_title" x="280" y="89" width="260" height="25" transform="translate(207 0)">
-												<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }}</span>
+												<span xmlns="http://www.w3.org/1999/xhtml">{{ item.id }} <br> {{ item.name }}</span>
 											</foreignObject>
 						    			{% endif %}
 						    		</g>
