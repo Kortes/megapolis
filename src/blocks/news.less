@@ -93,9 +93,9 @@
 	}
 
 	&-main{
-		height: 267px;
 		margin-bottom: 10px;
 		display: flex;
+
 
 		&__news, &__articles{
 			width: 356px;
@@ -108,7 +108,15 @@
 		&__articles{
 			width: 384px;
 			margin-left: 10px;
-			background: url(../images/news_bg.jpg) no-repeat;
+			background: url(../images/fon.png) no-repeat;
+			position: relative;
+
+			& > img{
+				height: 260px;
+				position: absolute;
+				bottom: 15px;
+				left: 5px;
+			}
 
 			&__head, &__body{
 				padding-left: 85px !important;
@@ -116,7 +124,7 @@
 			}
 
 			&__body{
-				height: 150px;
+				
 			}
 		}
 
@@ -159,6 +167,8 @@
 			text-decoration: none;
 			line-height: 29px;
 			font-weight: 600;
+			position: absolute;
+			bottom: 15px;
 		}
 
 		&__all{
